@@ -11,6 +11,7 @@ router.get('/', (req, res, next) => {
         id1 = req.session.message[0];
         id2 = req.session.message[1];
         id3 = req.session.message[2];
+        nums = [id1, id2, id3];
     }
     else {
         console.log('undefined!');
@@ -22,9 +23,10 @@ router.get('/', (req, res, next) => {
                 var data = {
                     title: 'メンバー',
                     content: rows,
-                    nums: [id1, id2, id3]
+                    number: nums
                 }
                 console.log(rows);
+                console.log('nums = '+nums[0]+', '+nums[1]+', '+nums[2]);
                 res.render('command/index', data);
             }
         });
@@ -59,6 +61,7 @@ router.post('/', (req, res, next) => {
                 var data = {
                     title: 'メンバー',
                     content: rows,
+                    number: [id1, id2, id3]
                 }
                 console.log(rows);
                 res.render('command/index', data);

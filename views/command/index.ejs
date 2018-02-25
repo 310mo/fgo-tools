@@ -22,16 +22,20 @@
         </head>
         <div role="main">
             <table>
-                <% for (var i in content) { %>
-                <tr>
-                    <% var obj = content[i]; %>
-                    <th class="name"><%= obj.name %></th>
-                    <td><button class="button" backgroundColor="blue"><font color=<%=obj.color1 %>><%= obj.c_cards[0] %></font></button></td>
-                    <td><button class="button"><font color=<%=obj.color2 %>><%= obj.c_cards[1] %></font></button></td>
-                    <td><button class="button"><font color=<%=obj.color3 %>><%= obj.c_cards[2] %></font></button></td>
-                    <td><button class="button"><font color=<%=obj.color4 %>><%= obj.c_cards[3] %></font></button></td>
-                    <td><button class="button"><font color=<%=obj.color5 %>><%= obj.c_cards[4] %></font></button></td>
-                </tr>
+                <% for (var j in content) { %> 
+                    <% for (var i in content) { %> 
+                    <% if (number[j]==content[i].id) { %>
+                    <tr>
+                        <% var obj = content[i]; %>
+                        <th class="name"><%= obj.name %></th>
+                        <td><button class="button"><font color=<%=obj.color1 %>><%= obj.c_cards[0] %></font></button></td>
+                        <td><button class="button"><font color=<%=obj.color2 %>><%= obj.c_cards[1] %></font></button></td>
+                        <td><button class="button"><font color=<%=obj.color3 %>><%= obj.c_cards[2] %></font></button></td>
+                        <td><button class="button"><font color=<%=obj.color4 %>><%= obj.c_cards[3] %></font></button></td>
+                        <td><button class="button"><font color=<%=obj.color5 %>><%= obj.c_cards[4] %></font></button></td>
+                    </tr>
+                    <% } %>
+                    <% } %>
                 <% } %>
             </table>
             <form method="post" action="/command">

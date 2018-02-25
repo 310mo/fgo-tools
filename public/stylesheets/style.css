@@ -8,9 +8,9 @@ a {
 }
 
 h1 {
-  color:red;
+  color: lightskyblue;
 }
 
 .button.active {
-  background-color: red;
+  background-color: lightgray;
 }
