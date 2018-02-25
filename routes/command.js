@@ -42,15 +42,15 @@ router.post('/', (req, res, next) => {
 
     console.log('command is '+color);
 
-    if(id1==req.body.before) {
+    if(req.body.before==1) {
         req.session.message[0] = req.body.after;
         id1 = req.body.after;
     }
-    else if(id2==req.body.before) {
+    else if(req.body.before==2) {
         req.session.message[1] = req.body.after;
         id2 = req.body.after;
     }
-    else if(id3==req.body.before) {
+    else if(req.body.before==3) {
         req.session.message[2] = req.body.after;
         id3 = req.body.after;
     }

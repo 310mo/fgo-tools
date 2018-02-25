@@ -5,6 +5,72 @@
         <title><%= title %></title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
     </head>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script>
+         $(function() {
+            var $children = $('.children');
+            var $children2 = $('.children2');
+            var $children3 = $('.children3');
+            var original = $children.html();
+            var original2 = $children2.html();
+            var original3 = $children3.html();
+            
+
+            $('.parent').change(function() {
+                var val1 = $(this).val();
+
+                $children.html(original).find('option').each(function() {
+                var val2 = $(this).data('val');
+                if (val1 != val2) {
+                    $(this).not(':first-child').remove();
+                }
+                });
+
+                if ($(this).val() === '') {
+                $children.attr('disabled', 'disabled');
+                } else {
+                $children.removeAttr('disabled');
+                }
+
+            });
+            $('.parent2').change(function() {
+                var val1 = $(this).val();
+
+                $children2.html(original).find('option').each(function() {
+                var val2 = $(this).data('val');
+                if (val1 != val2) {
+                    $(this).not(':first-child').remove();
+                }
+                });
+
+                if ($(this).val() === '') {
+                $children2.attr('disabled', 'disabled');
+                } else {
+                $children2.removeAttr('disabled');
+                }
+
+            });
+            $('.parent3').change(function() {
+                var val1 = $(this).val();
+
+                $children3.html(original).find('option').each(function() {
+                var val2 = $(this).data('val');
+                if (val1 != val2) {
+                    $(this).not(':first-child').remove();
+                }
+                });
+
+                if ($(this).val() === '') {
+                $children3.attr('disabled', 'disabled');
+                } else {
+                $children3.removeAttr('disabled');
+                }
+
+            });
+        });
+    </script>
     <body>
         <head>
             <h1><%= title %></h1>
@@ -14,9 +80,726 @@
             <table>
                 <tr>
                     <th>ID検索</th>
-                    <td><input type="text" name="servant1"></td>
-                    <td><input type="text" name="servant2"></td>
-                    <td><input type="text" name="servant3"></td>
+                    <td>
+                            <select class="parent" name="class" required>
+                                <option value="" class="msg" disabled selected>-----サーヴァントのクラスを選択-----</option>
+                                <option value="5saber">星５セイバー</option>
+                                <option value="4saber">星４セイバー</option>
+                                <option value="3saber">星３セイバー</option>
+                                <option value="5archer">星５アーチャー</option>
+                                <option value="4archer">星４アーチャー</option>
+                                <option value="3archer">星３アーチャー</option>
+                                <option value="2archer">星２アーチャー</option>
+                                <option value="1archer">星１アーチャー</option>
+                                <option value="5lancer">星５ランサー</option>
+                                <option value="4lancer">星４ランサー</option>
+                                <option value="3lancer">星３ランサー</option>
+                                <option value="2lancer">星２ランサー</option>
+                                <option value="1lancer">星１ランサー</option>
+                                <option value="5rider">星５ライダー</option>
+                                <option value="4rider">星４ライダー</option>
+                                <option value="3rider">星３ライダー</option>
+                                <option value="2rider">星２ライダー</option>
+                                <option value="1rider">星１ライダー</option>
+                                <option value="5caster">星５キャスター</option>
+                                <option value="4caster">星４キャスター</option>
+                                <option value="3caster">星３キャスター</option>
+                                <option value="2caster">星２キャスター</option>
+                                <option value="1caster">星１キャスター</option>
+                                <option value="5assassin">星５アサシン</option>
+                                <option value="4assassin">星４アサシン</option>
+                                <option value="3assassin">星３アサシン</option>
+                                <option value="2assassin">星２アサシン</option>
+                                <option value="1assassin">星１アサシン</option>
+                                <option value="5berserker">星５バーサーカー</option>
+                                <option value="4berserker">星４バーサーカー</option>
+                                <option value="3berserker">星３バーサーカー</option>
+                                <option value="2berserker">星２バーサーカー</option>
+                                <option value="1berserker">星１バーサーカー</option>
+                                <option value="5extra">星５エクストラ</option>
+                                <option value="4extra">星４エクストラ</option>
+                                <option value="0extra">星０エクストラ</option>
+                            </select>
+                            <select class="children" name="servant1" disabled required>
+                                    <option value="not_selected" class="msg" disabled selected>-----サーヴァントを選択-----</option>
+                                        <option value=1 data-val="4extra">マシュ・キリエライト</option>
+                                        <option value=1 data-val="3extra">マシュ・キリエライト</option>
+                                        <option value=2 data-val="5saber">アルトリア・ペンドラゴン</option>
+                                        <option value=3 data-val="4saber">アルトリア（オルタ）</option>
+                                        <option value=4 data-val="4saber">アルトリア（リリィ）</option>
+                                        <option value=5 data-val="4saber">ネロ・クラウディウス</option>
+                                        <option value=6 data-val="4saber">ジークフリート</option>
+                                        <option value=7 data-val="3saber">カエサル</option>
+                                        <option value=8 data-val="5saber">アルテラ</option>
+                                        <option value=9 data-val="3saber">ジルドレェ（剣）</option>
+                                        <option value=10 data-val="4saber">デオン</option>
+                                        <option value=11 data-val="4archer">エミヤ</option>
+                                        <option value=12 data-val="5archer">ギルガメッシュ</option>
+                                        <option value=13 data-val="3archer">ロビンフッド</option>
+                                        <option value=14 data-val="4archer">アタランテ</option>
+                                        <option value=15 data-val="3archer">エウリュアレ</option>
+                                        <option value=16 data-val="1archer">アーラシュ</option>
+                                        <option value=17 data-val="3lancer">クーフーリン</option>
+                                        <option value=18 data-val="4lancer">エリザベート</option>
+                                        <option value=19 data-val="2lancer">弁慶</option>
+                                        <option value=20 data-val="3lancer">クーフーリン（プロト）</option>
+                                        <option value=21 data-val="2lancer">レオニダス</option>
+                                        <option value=22 data-val="3lancer">ロムルス</option>
+                                        <option value=23 data-val="3rider">メドューサ</option>
+                                        <option value=24 data-val="2rider">ゲオルギウス</option>
+                                        <option value=25 data-val="2rider">エドワード・ティーチ</option>
+                                        <option value=26 data-val="3rider">ブーディカ</option>
+                                        <option value=27 data-val="3rider">牛若丸</option>
+                                        <option value=28 data-val="3rider">アレキサンダー</option>
+                                        <option value=29 data-val="4rider">マリー・アントワネット</option>
+                                        <option value=30 data-val="4rider">マルタ</option>
+                                        <option value=31 data-val="3caster">メディア</option>
+                                        <option value=32 data-val="3caster">ジルドレェ</option>
+                                        <option value=33 data-val="2caster">アンデルセン</option>
+                                        <option value=34 data-val="2caster">シェイクスピア</option>
+                                        <option value=35 data-val="3caster">メフィストフェレス</option>
+                                        <option value=36 data-val="1caster">モーツァルト</option>
+                                        <option value=37 data-val="5caster">諸葛孔明</option>
+                                        <option value=38 data-val="3caster">クーフーリン（術）</option>
+                                        <option value=39 data-val="1assassin">佐々木小次郎</option>
+                                        <option value=40 data-val="2assassin">呪腕のハサン</option>
+                                        <option value=41 data-val="4assassin">ステンノ</option>
+                                        <option value=42 data-val="3assassin">荊軻</option>
+                                        <option value=43 data-val="2assassin">サンソン</option>
+                                        <option value=44 data-val="2assassin">ファントム・ジ・オペラ</option>
+                                        <option value=45 data-val="1assassin">マタ・ハリ</option>
+                                        <option value=46 data-val="4assassin">カーミラ</option>
+                                        <option value=47 data-val="4berserker">ヘラクレス</option>
+                                        <option value=48 data-val="4berserker">ランスロット</option>
+                                        <option value=49 data-val="3berserker">呂布</option>
+                                        <option value=50 data-val="1berserker">スパルタクス</option>
+                                        <option value=51 data-val="5berserker">坂田金時</option>
+                                        <option value=52 data-val="5berserker">ヴラド三世</option>
+                                        <option value=53 data-val="1berserker">アステリオス</option>
+                                        <option value=54 data-val="2berserker">カリギュラ</option>
+                                        <option value=55 data-val="3berserker">ダレイオス三世</option>
+                                        <option value=56 data-val="3berserker">清姫</option>
+                                        <option value=57 data-val="2berserker">エイリーク</option>
+                                        <option value=58 data-val="4berserker">タマモキャット</option>
+                                        <option value=59 data-val="5extra">ジャンヌ・ダルク</option>
+                                        <option value=60 data-val="5archer">オリオン</option>
+                                        <option value=61 data-val="4caster">エリザベート（術）</option>
+                                        <option value=62 data-val="5caster">玉藻の前</option>
+                                        <option value=63 data-val="3archer">ダビデ</option>
+                                        <option value=64 data-val="3lancer">ヘクトール</option>
+                                        <option value=65 data-val="5rider">フランシス・ドレイク</option>
+                                        <option value=66 data-val="4rider">アン＆メアリー</option>
+                                        <option value=67 data-val="4caster">メディア（リリィ）</option>
+                                        <option value=68 data-val="5saber">沖田総司</option>
+                                        <option value=69 data-val="4archer">織田信長</option>
+                                        <option value=70 data-val="5lancer">スカサハ</option>
+                                        <option value=71 data-val="3lancer">ディルムッド</option>
+                                        <option value=72 data-val="3saber">フェルグス</option>
+                                        <option value=73 data-val="4rider">アルトリア（サンタオルタ）</option>
+                                        <option value=74 data-val="4caster">ナーサリー・ライム</option>
+                                        <option value=75 data-val="5assassin">ジャック・ザ・リッパー</option>
+                                        <option value=76 data-val="5saber">モードレッド</option>
+                                        <option value=77 data-val="5archer">ニコラ・テスラ</option>
+                                        <option value=78 data-val="4lancer">アルトリア（槍オルタ）</option>
+                                        <option value=79 data-val="3caster">パルケルスス</option>
+                                        <option value=80 data-val="3caster">チャールズ・バベッジ</option>
+                                        <option value=81 data-val="3assassin">ジキル＆ハイド</option>
+                                        <option value=82 data-val="4berserker">フランケンシュタイン</option>
+                                        <option value=84 data-val="5archer">アルジュナ</option>
+                                        <option value=85 data-val="5lancer">カルナ</option>
+                                        <option value=86 data-val="5assassin">謎のヒロインX</option>
+                                        <option value=87 data-val="4lancer">フィン・マックール</option>
+                                        <option value=88 data-val="5lancer">ブリュンヒルデ</option>
+                                        <option value=89 data-val="4berserker">ベオウルフ</option>
+                                        <option value=90 data-val="5saber">ネロ（ブライド）</option>
+                                        <option value=91 data-val="5saber">両儀式（剣）</option>
+                                        <option value=92 data-val="4assassin">両儀式（殺）</option>
+                                        <option value=93 data-val="5extra">天草四郎</option>
+                                        <option value=94 data-val="4rider">アストルフォ</option>
+                                        <option value=95 data-val="3archer">子ギル</option>
+                                        <option value=96 data-val="5extra">巌窟王</option>
+                                        <option value=97 data-val="5berserker">ナイチンゲール</option>
+                                        <option value=98 data-val="5berserker">クーフーリン（オルタ）</option>
+                                        <option value=99 data-val="5rider">メイヴ</option>
+                                        <option value=100 data-val="4caster">エレナ</option>
+                                        <option value=101 data-val="4saber">ラーマ</option>
+                                        <option value=102 data-val="4lancer">李書文</option>
+                                        <option value=103 data-val="4caster">トーマス・エジソン</option>
+                                        <option value=104 data-val="3caster">ジェロニモ</option>
+                                        <option value=105 data-val="3archer">ビリー・ザ・キッド</option>
+                                        <option value=106 data-val="5extra">ジャンヌ・ダルク（オルタ）</option>
+                                        <option value=107 data-val="0extra">アンリマユ</option>
+                                        <option value=108 data-val="5rider">イスカンダル</option>
+                                        <option value=109 data-val="4assassin">エミヤ（殺）</option>
+                                        <option value=110 data-val="3assassin">百貌のハサン</option>
+                                        <option value=111 data-val="4caster">アイリスフィール</option>
+                                        <option value=112 data-val="5assassin">酒呑童子</option>
+                                        <option value=113 data-val="5caster">玄奘三蔵</option>
+                                        <option value=114 data-val="5berserker">源頼光</option>
+                                        <option value=115 data-val="4rider">坂田金時（騎）</option>
+                                        <option value=116 data-val="4berserker">茨木童子</option>
+                                        <option value=117 data-val="3assassin">風魔小太郎</option>
+                                        <option value=118 data-val="5rider">オジマンディアス</option>
+                                        <option value=119 data-val="5lancer">アルトリア（槍）</option>
+                                        <option value=120 data-val="4caster">ニトクリス</option>
+                                        <option value=121 data-val="4saber">ランスロット（剣）</option>
+                                        <option value=122 data-val="4archer">トリスタン</option>
+                                        <option value=123 data-val="4saber">ガウェイン</option>
+                                        <option value=124 data-val="3assassin">静謐のハサン</option>
+                                        <option value=125 data-val="3archer">俵藤太</option>
+                                        <option value=126 data-val="3saber">ベディヴィエール</option>
+                                        <option value=127 data-val="5caster">レオナルド・ダ・ヴィンチ</option>
+                                        <option value=128 data-val="5lancer">玉藻の前（水着）</option>
+                                        <option value=129 data-val="5archer">アルトリア（水着）</option>
+                                        <option value=130 data-val="4caster">マリー（水着）</option>
+                                        <option value=131 data-val="4archer">アン＆メア（水着）</option>
+                                        <option value=132 data-val="4rider">モードレッド</option>
+                                        <option value=133 data-val="4assassin">スカサハ（水着）</option>
+                                        <option value=134 data-val="4lancer">清姫（水着）</option>
+                                        <option value=135 data-val="4extra">マルタ（水着）</option>
+                                        <option value=136 data-val="5caster">イリヤスフィール</option>
+                                        <option value=137 data-val="4archer">クロエ</option>
+                                        <option value=138 data-val="4saber">エリザベート（剣）</option>
+                                        <option value=139 data-val="5assassin">クレオパトラ</option>
+                                        <option value=140 data-val="4lancer">ヴラド三世（槍）</option>
+                                        <option value=141 data-val="4lancer">ジャンヌ・ダルク・オルタ・サンタ・リリィ</option>
+                                        <option value=142 data-val="5archer">イシュタル</option>
+                                        <option value=143 data-val="5lancer">エルキドゥ</option>
+                                        <option value=144 data-val="5rider">ケツァル・コアトル</option>
+                                        <option value=145 data-val="4caster">ギルガメッシュ（術）</option>
+                                        <option value=146 data-val="4lancer">メドゥーサ（槍）</option>
+                                        <option value=147 data-val="4extra">>ゴルゴーン</option>
+                                        <option value=148 data-val="4lancer">ジャガーマン</option>
+                                        <option value=150 data-val="5caster">マーリン</option>
+                                        <option value=153 data-val="5saber">宮本武蔵</option>
+                                        <option value=154 data-val="5assassin">山の翁</option>
+                                        <option value=155 data-val="5berserker">謎のヒロインX（オルタ）</option>
+                                        <option value=156 data-val="5archer">新宿のアーチャー</option>
+                                        <option value=157 data-val="4archer">エミヤ（オルタ）</option>
+                                        <option value=158 data-val="4extra">新宿のアベンジャー</option>
+                                        <option value=159 data-val="4assassin">新宿のアサシン</option>
+                                        <option value=160 data-val="5saber">アーサー・ペンドラゴン（プロト）</option>
+                                        <option value=161 data-val="5berserker">土方歳三</option>
+                                        <option value=162 data-val="4berserker">茶々</option>
+                                        <option value=163 data-val="4extra">メルトリリス</option>
+                                        <option value=164 data-val="4extra">パッションリップ</option>
+                                        <option value=165 data-val="4saber">鈴鹿御前</option>
+                                        <option value=166 data-val="4extra">BB</option>
+                                        <option value=167 data-val="5extra">殺生院キアラ</option>
+                                        <option value=169 data-val="5caster">不夜城のキャスター</option>
+                                        <option value=170 data-val="4assassin">不夜城のアサシン</option>
+                                        <option value=171 data-val="4berserker">エルドラドのバーサーカー</option>
+                                        <option value=172 data-val="3rider">レジスタンスのライダー</option>
+                                        <option value=173 data-val="5extra">シャーロック・ホームズ</option>
+                                        <option value=174 data-val="1berserker">ポール・バニヤン</option>
+                                        <option value=175 data-val="5caster">ネロ（水着）</option>
+                                        <option value=176 data-val="4saber">フランケンシュタイン（水着）</option>
+                                        <option value=177 data-val="4assassin">ニトクリス（水着）</option>
+                                        <option value=178 data-val="4berserker">織田信長（水着）</option>
+                                        <option value=179 data-val="5rider">アルトリア（水着オルタ）</option>
+                                        <option value=180 data-val="4archer">エレナ（水着）</option>
+                                        <option value=181 data-val="4lancer">源頼光（水着）</option>
+                                        <option value=182 data-val="4rider">イシュタル（水着）</option>
+                                        <option value=183 data-val="4lancer">パールヴァティー</option>
+                                        <option value=184 data-val="4archer">アーチャー・インフェルノ</option>
+                                        <option value=185 data-val="4assassin">アサシン・パライソ</option>
+                                        <option value=186 data-val="3lancer">宝蔵院胤舜</option>
+                                        <option value=187 data-val="4saber">柳生但馬守宗矩</option>
+                                        <option value=188 data-val="4assassin">加藤段蔵</option>
+                                        <option value=189 data-val="5assassin">刑部姫</option>
+                                        <option value=190 data-val="4extra">メカエリチャン</option>
+                                        <option value=191 data-val="4extra">メカエリチャンII号機</option>
+                                        <option value=192 data-val="4caster">オケアノスのキャスター</option>
+                                        <option value=193 data-val="4lancer">哪吒</option>
+                                        <option value=194 data-val="4caster">ミドラーシュのキャスター</option>
+                                        <option value=195 data-val="5extra">アビゲイル・ウィリアムズ</option>
+                                        <option value=196 data-val="5lancer">エレキシュガル</option>
+                                        <option value=197 data-val="4archer">アルテラ・ザ・サン（タ）</option>
+                                        <option value=198 data-val="5extra">葛飾北斎</option>
+                                        <option value=199 data-val="5assassin">セミラミス</option>
+                                        <option value=200 data-val="4archer">浅上藤乃</option>
+                                </select>
+                        </td>
+                        <td>
+                                <select class="parent2" name="class" required>
+                                    <option value="" class="msg" disabled selected>-----サーヴァントのクラスを選択-----</option>
+                                    <option value="5saber">星５セイバー</option>
+                                    <option value="4saber">星４セイバー</option>
+                                    <option value="3saber">星３セイバー</option>
+                                    <option value="5archer">星５アーチャー</option>
+                                    <option value="4archer">星４アーチャー</option>
+                                    <option value="3archer">星３アーチャー</option>
+                                    <option value="2archer">星２アーチャー</option>
+                                    <option value="1archer">星１アーチャー</option>
+                                    <option value="5lancer">星５ランサー</option>
+                                    <option value="4lancer">星４ランサー</option>
+                                    <option value="3lancer">星３ランサー</option>
+                                    <option value="2lancer">星２ランサー</option>
+                                    <option value="1lancer">星１ランサー</option>
+                                    <option value="5rider">星５ライダー</option>
+                                    <option value="4rider">星４ライダー</option>
+                                    <option value="3rider">星３ライダー</option>
+                                    <option value="2rider">星２ライダー</option>
+                                    <option value="1rider">星１ライダー</option>
+                                    <option value="5caster">星５キャスター</option>
+                                    <option value="4caster">星４キャスター</option>
+                                    <option value="3caster">星３キャスター</option>
+                                    <option value="2caster">星２キャスター</option>
+                                    <option value="1caster">星１キャスター</option>
+                                    <option value="5assassin">星５アサシン</option>
+                                    <option value="4assassin">星４アサシン</option>
+                                    <option value="3assassin">星３アサシン</option>
+                                    <option value="2assassin">星２アサシン</option>
+                                    <option value="1assassin">星１アサシン</option>
+                                    <option value="5berserker">星５バーサーカー</option>
+                                    <option value="4berserker">星４バーサーカー</option>
+                                    <option value="3berserker">星３バーサーカー</option>
+                                    <option value="2berserker">星２バーサーカー</option>
+                                    <option value="1berserker">星１バーサーカー</option>
+                                    <option value="5extra">星５エクストラ</option>
+                                    <option value="4extra">星４エクストラ</option>
+                                    <option value="0extra">星０エクストラ</option>
+                                </select>
+                                <select class="children2" name="servant2" disabled required>
+                                        <option value="not_selected" class="msg" disabled selected>-----サーヴァントを選択-----</option>
+                                            <option value=1 data-val="4extra">マシュ・キリエライト</option>
+                                            <option value=1 data-val="3extra">マシュ・キリエライト</option>
+                                            <option value=2 data-val="5saber">アルトリア・ペンドラゴン</option>
+                                            <option value=3 data-val="4saber">アルトリア（オルタ）</option>
+                                            <option value=4 data-val="4saber">アルトリア（リリィ）</option>
+                                            <option value=5 data-val="4saber">ネロ・クラウディウス</option>
+                                            <option value=6 data-val="4saber">ジークフリート</option>
+                                            <option value=7 data-val="3saber">カエサル</option>
+                                            <option value=8 data-val="5saber">アルテラ</option>
+                                            <option value=9 data-val="3saber">ジルドレェ（剣）</option>
+                                            <option value=10 data-val="4saber">デオン</option>
+                                            <option value=11 data-val="4archer">エミヤ</option>
+                                            <option value=12 data-val="5archer">ギルガメッシュ</option>
+                                            <option value=13 data-val="3archer">ロビンフッド</option>
+                                            <option value=14 data-val="4archer">アタランテ</option>
+                                            <option value=15 data-val="3archer">エウリュアレ</option>
+                                            <option value=16 data-val="1archer">アーラシュ</option>
+                                            <option value=17 data-val="3lancer">クーフーリン</option>
+                                            <option value=18 data-val="4lancer">エリザベート</option>
+                                            <option value=19 data-val="2lancer">弁慶</option>
+                                            <option value=20 data-val="3lancer">クーフーリン（プロト）</option>
+                                            <option value=21 data-val="2lancer">レオニダス</option>
+                                            <option value=22 data-val="3lancer">ロムルス</option>
+                                            <option value=23 data-val="3rider">メドューサ</option>
+                                            <option value=24 data-val="2rider">ゲオルギウス</option>
+                                            <option value=25 data-val="2rider">エドワード・ティーチ</option>
+                                            <option value=26 data-val="3rider">ブーディカ</option>
+                                            <option value=27 data-val="3rider">牛若丸</option>
+                                            <option value=28 data-val="3rider">アレキサンダー</option>
+                                            <option value=29 data-val="4rider">マリー・アントワネット</option>
+                                            <option value=30 data-val="4rider">マルタ</option>
+                                            <option value=31 data-val="3caster">メディア</option>
+                                            <option value=32 data-val="3caster">ジルドレェ</option>
+                                            <option value=33 data-val="2caster">アンデルセン</option>
+                                            <option value=34 data-val="2caster">シェイクスピア</option>
+                                            <option value=35 data-val="3caster">メフィストフェレス</option>
+                                            <option value=36 data-val="1caster">モーツァルト</option>
+                                            <option value=37 data-val="5caster">諸葛孔明</option>
+                                            <option value=38 data-val="3caster">クーフーリン（術）</option>
+                                            <option value=39 data-val="1assassin">佐々木小次郎</option>
+                                            <option value=40 data-val="2assassin">呪腕のハサン</option>
+                                            <option value=41 data-val="4assassin">ステンノ</option>
+                                            <option value=42 data-val="3assassin">荊軻</option>
+                                            <option value=43 data-val="2assassin">サンソン</option>
+                                            <option value=44 data-val="2assassin">ファントム・ジ・オペラ</option>
+                                            <option value=45 data-val="1assassin">マタ・ハリ</option>
+                                            <option value=46 data-val="4assassin">カーミラ</option>
+                                            <option value=47 data-val="4berserker">ヘラクレス</option>
+                                            <option value=48 data-val="4berserker">ランスロット</option>
+                                            <option value=49 data-val="3berserker">呂布</option>
+                                            <option value=50 data-val="1berserker">スパルタクス</option>
+                                            <option value=51 data-val="5berserker">坂田金時</option>
+                                            <option value=52 data-val="5berserker">ヴラド三世</option>
+                                            <option value=53 data-val="1berserker">アステリオス</option>
+                                            <option value=54 data-val="2berserker">カリギュラ</option>
+                                            <option value=55 data-val="3berserker">ダレイオス三世</option>
+                                            <option value=56 data-val="3berserker">清姫</option>
+                                            <option value=57 data-val="2berserker">エイリーク</option>
+                                            <option value=58 data-val="4berserker">タマモキャット</option>
+                                            <option value=59 data-val="5extra">ジャンヌ・ダルク</option>
+                                            <option value=60 data-val="5archer">オリオン</option>
+                                            <option value=61 data-val="4caster">エリザベート（術）</option>
+                                            <option value=62 data-val="5caster">玉藻の前</option>
+                                            <option value=63 data-val="3archer">ダビデ</option>
+                                            <option value=64 data-val="3lancer">ヘクトール</option>
+                                            <option value=65 data-val="5rider">フランシス・ドレイク</option>
+                                            <option value=66 data-val="4rider">アン＆メアリー</option>
+                                            <option value=67 data-val="4caster">メディア（リリィ）</option>
+                                            <option value=68 data-val="5saber">沖田総司</option>
+                                            <option value=69 data-val="4archer">織田信長</option>
+                                            <option value=70 data-val="5lancer">スカサハ</option>
+                                            <option value=71 data-val="3lancer">ディルムッド</option>
+                                            <option value=72 data-val="3saber">フェルグス</option>
+                                            <option value=73 data-val="4rider">アルトリア（サンタオルタ）</option>
+                                            <option value=74 data-val="4caster">ナーサリー・ライム</option>
+                                            <option value=75 data-val="5assassin">ジャック・ザ・リッパー</option>
+                                            <option value=76 data-val="5saber">モードレッド</option>
+                                            <option value=77 data-val="5archer">ニコラ・テスラ</option>
+                                            <option value=78 data-val="4lancer">アルトリア（槍オルタ）</option>
+                                            <option value=79 data-val="3caster">パルケルスス</option>
+                                            <option value=80 data-val="3caster">チャールズ・バベッジ</option>
+                                            <option value=81 data-val="3assassin">ジキル＆ハイド</option>
+                                            <option value=82 data-val="4berserker">フランケンシュタイン</option>
+                                            <option value=84 data-val="5archer">アルジュナ</option>
+                                            <option value=85 data-val="5lancer">カルナ</option>
+                                            <option value=86 data-val="5assassin">謎のヒロインX</option>
+                                            <option value=87 data-val="4lancer">フィン・マックール</option>
+                                            <option value=88 data-val="5lancer">ブリュンヒルデ</option>
+                                            <option value=89 data-val="4berserker">ベオウルフ</option>
+                                            <option value=90 data-val="5saber">ネロ（ブライド）</option>
+                                            <option value=91 data-val="5saber">両儀式（剣）</option>
+                                            <option value=92 data-val="4assassin">両儀式（殺）</option>
+                                            <option value=93 data-val="5extra">天草四郎</option>
+                                            <option value=94 data-val="4rider">アストルフォ</option>
+                                            <option value=95 data-val="3archer">子ギル</option>
+                                            <option value=96 data-val="5extra">巌窟王</option>
+                                            <option value=97 data-val="5berserker">ナイチンゲール</option>
+                                            <option value=98 data-val="5berserker">クーフーリン（オルタ）</option>
+                                            <option value=99 data-val="5rider">メイヴ</option>
+                                            <option value=100 data-val="4caster">エレナ</option>
+                                            <option value=101 data-val="4saber">ラーマ</option>
+                                            <option value=102 data-val="4lancer">李書文</option>
+                                            <option value=103 data-val="4caster">トーマス・エジソン</option>
+                                            <option value=104 data-val="3caster">ジェロニモ</option>
+                                            <option value=105 data-val="3archer">ビリー・ザ・キッド</option>
+                                            <option value=106 data-val="5extra">ジャンヌ・ダルク（オルタ）</option>
+                                            <option value=107 data-val="0extra">アンリマユ</option>
+                                            <option value=108 data-val="5rider">イスカンダル</option>
+                                            <option value=109 data-val="4assassin">エミヤ（殺）</option>
+                                            <option value=110 data-val="3assassin">百貌のハサン</option>
+                                            <option value=111 data-val="4caster">アイリスフィール</option>
+                                            <option value=112 data-val="5assassin">酒呑童子</option>
+                                            <option value=113 data-val="5caster">玄奘三蔵</option>
+                                            <option value=114 data-val="5berserker">源頼光</option>
+                                            <option value=115 data-val="4rider">坂田金時（騎）</option>
+                                            <option value=116 data-val="4berserker">茨木童子</option>
+                                            <option value=117 data-val="3assassin">風魔小太郎</option>
+                                            <option value=118 data-val="5rider">オジマンディアス</option>
+                                            <option value=119 data-val="5lancer">アルトリア（槍）</option>
+                                            <option value=120 data-val="4caster">ニトクリス</option>
+                                            <option value=121 data-val="4saber">ランスロット（剣）</option>
+                                            <option value=122 data-val="4archer">トリスタン</option>
+                                            <option value=123 data-val="4saber">ガウェイン</option>
+                                            <option value=124 data-val="3assassin">静謐のハサン</option>
+                                            <option value=125 data-val="3archer">俵藤太</option>
+                                            <option value=126 data-val="3saber">ベディヴィエール</option>
+                                            <option value=127 data-val="5caster">レオナルド・ダ・ヴィンチ</option>
+                                            <option value=128 data-val="5lancer">玉藻の前（水着）</option>
+                                            <option value=129 data-val="5archer">アルトリア（水着）</option>
+                                            <option value=130 data-val="4caster">マリー（水着）</option>
+                                            <option value=131 data-val="4archer">アン＆メア（水着）</option>
+                                            <option value=132 data-val="4rider">モードレッド</option>
+                                            <option value=133 data-val="4assassin">スカサハ（水着）</option>
+                                            <option value=134 data-val="4lancer">清姫（水着）</option>
+                                            <option value=135 data-val="4extra">マルタ（水着）</option>
+                                            <option value=136 data-val="5caster">イリヤスフィール</option>
+                                            <option value=137 data-val="4archer">クロエ</option>
+                                            <option value=138 data-val="4saber">エリザベート（剣）</option>
+                                            <option value=139 data-val="5assassin">クレオパトラ</option>
+                                            <option value=140 data-val="4lancer">ヴラド三世（槍）</option>
+                                            <option value=141 data-val="4lancer">ジャンヌ・ダルク・オルタ・サンタ・リリィ</option>
+                                            <option value=142 data-val="5archer">イシュタル</option>
+                                            <option value=143 data-val="5lancer">エルキドゥ</option>
+                                            <option value=144 data-val="5rider">ケツァル・コアトル</option>
+                                            <option value=145 data-val="4caster">ギルガメッシュ（術）</option>
+                                            <option value=146 data-val="4lancer">メドゥーサ（槍）</option>
+                                            <option value=147 data-val="4extra">>ゴルゴーン</option>
+                                            <option value=148 data-val="4lancer">ジャガーマン</option>
+                                            <option value=150 data-val="5caster">マーリン</option>
+                                            <option value=153 data-val="5saber">宮本武蔵</option>
+                                            <option value=154 data-val="5assassin">山の翁</option>
+                                            <option value=155 data-val="5berserker">謎のヒロインX（オルタ）</option>
+                                            <option value=156 data-val="5archer">新宿のアーチャー</option>
+                                            <option value=157 data-val="4archer">エミヤ（オルタ）</option>
+                                            <option value=158 data-val="4extra">新宿のアベンジャー</option>
+                                            <option value=159 data-val="4assassin">新宿のアサシン</option>
+                                            <option value=160 data-val="5saber">アーサー・ペンドラゴン（プロト）</option>
+                                            <option value=161 data-val="5berserker">土方歳三</option>
+                                            <option value=162 data-val="4berserker">茶々</option>
+                                            <option value=163 data-val="4extra">メルトリリス</option>
+                                            <option value=164 data-val="4extra">パッションリップ</option>
+                                            <option value=165 data-val="4saber">鈴鹿御前</option>
+                                            <option value=166 data-val="4extra">BB</option>
+                                            <option value=167 data-val="5extra">殺生院キアラ</option>
+                                            <option value=169 data-val="5caster">不夜城のキャスター</option>
+                                            <option value=170 data-val="4assassin">不夜城のアサシン</option>
+                                            <option value=171 data-val="4berserker">エルドラドのバーサーカー</option>
+                                            <option value=172 data-val="3rider">レジスタンスのライダー</option>
+                                            <option value=173 data-val="5extra">シャーロック・ホームズ</option>
+                                            <option value=174 data-val="1berserker">ポール・バニヤン</option>
+                                            <option value=175 data-val="5caster">ネロ（水着）</option>
+                                            <option value=176 data-val="4saber">フランケンシュタイン（水着）</option>
+                                            <option value=177 data-val="4assassin">ニトクリス（水着）</option>
+                                            <option value=178 data-val="4berserker">織田信長（水着）</option>
+                                            <option value=179 data-val="5rider">アルトリア（水着オルタ）</option>
+                                            <option value=180 data-val="4archer">エレナ（水着）</option>
+                                            <option value=181 data-val="4lancer">源頼光（水着）</option>
+                                            <option value=182 data-val="4rider">イシュタル（水着）</option>
+                                            <option value=183 data-val="4lancer">パールヴァティー</option>
+                                            <option value=184 data-val="4archer">アーチャー・インフェルノ</option>
+                                            <option value=185 data-val="4assassin">アサシン・パライソ</option>
+                                            <option value=186 data-val="3lancer">宝蔵院胤舜</option>
+                                            <option value=187 data-val="4saber">柳生但馬守宗矩</option>
+                                            <option value=188 data-val="4assassin">加藤段蔵</option>
+                                            <option value=189 data-val="5assassin">刑部姫</option>
+                                            <option value=190 data-val="4extra">メカエリチャン</option>
+                                            <option value=191 data-val="4extra">メカエリチャンII号機</option>
+                                            <option value=192 data-val="4caster">オケアノスのキャスター</option>
+                                            <option value=193 data-val="4lancer">哪吒</option>
+                                            <option value=194 data-val="4caster">ミドラーシュのキャスター</option>
+                                            <option value=195 data-val="5extra">アビゲイル・ウィリアムズ</option>
+                                            <option value=196 data-val="5lancer">エレキシュガル</option>
+                                            <option value=197 data-val="4archer">アルテラ・ザ・サン（タ）</option>
+                                            <option value=198 data-val="5extra">葛飾北斎</option>
+                                            <option value=199 data-val="5assassin">セミラミス</option>
+                                            <option value=200 data-val="4archer">浅上藤乃</option>
+                                    </select>
+                            </td>
+                            <td>
+                                    <select class="parent3" name="class" required>
+                                        <option value="" class="msg" disabled selected>-----サーヴァントのクラスを選択-----</option>
+                                        <option value="5saber">星５セイバー</option>
+                                        <option value="4saber">星４セイバー</option>
+                                        <option value="3saber">星３セイバー</option>
+                                        <option value="5archer">星５アーチャー</option>
+                                        <option value="4archer">星４アーチャー</option>
+                                        <option value="3archer">星３アーチャー</option>
+                                        <option value="2archer">星２アーチャー</option>
+                                        <option value="1archer">星１アーチャー</option>
+                                        <option value="5lancer">星５ランサー</option>
+                                        <option value="4lancer">星４ランサー</option>
+                                        <option value="3lancer">星３ランサー</option>
+                                        <option value="2lancer">星２ランサー</option>
+                                        <option value="1lancer">星１ランサー</option>
+                                        <option value="5rider">星５ライダー</option>
+                                        <option value="4rider">星４ライダー</option>
+                                        <option value="3rider">星３ライダー</option>
+                                        <option value="2rider">星２ライダー</option>
+                                        <option value="1rider">星１ライダー</option>
+                                        <option value="5caster">星５キャスター</option>
+                                        <option value="4caster">星４キャスター</option>
+                                        <option value="3caster">星３キャスター</option>
+                                        <option value="2caster">星２キャスター</option>
+                                        <option value="1caster">星１キャスター</option>
+                                        <option value="5assassin">星５アサシン</option>
+                                        <option value="4assassin">星４アサシン</option>
+                                        <option value="3assassin">星３アサシン</option>
+                                        <option value="2assassin">星２アサシン</option>
+                                        <option value="1assassin">星１アサシン</option>
+                                        <option value="5berserker">星５バーサーカー</option>
+                                        <option value="4berserker">星４バーサーカー</option>
+                                        <option value="3berserker">星３バーサーカー</option>
+                                        <option value="2berserker">星２バーサーカー</option>
+                                        <option value="1berserker">星１バーサーカー</option>
+                                        <option value="5extra">星５エクストラ</option>
+                                        <option value="4extra">星４エクストラ</option>
+                                        <option value="0extra">星０エクストラ</option>
+                                    </select>
+                                    <select class="children3" name="servant3" disabled required>
+                                            <option value="not_selected" class="msg" disabled selected>-----サーヴァントを選択-----</option>
+                                                <option value=1 data-val="4extra">マシュ・キリエライト</option>
+                                                <option value=1 data-val="3extra">マシュ・キリエライト</option>
+                                                <option value=2 data-val="5saber">アルトリア・ペンドラゴン</option>
+                                                <option value=3 data-val="4saber">アルトリア（オルタ）</option>
+                                                <option value=4 data-val="4saber">アルトリア（リリィ）</option>
+                                                <option value=5 data-val="4saber">ネロ・クラウディウス</option>
+                                                <option value=6 data-val="4saber">ジークフリート</option>
+                                                <option value=7 data-val="3saber">カエサル</option>
+                                                <option value=8 data-val="5saber">アルテラ</option>
+                                                <option value=9 data-val="3saber">ジルドレェ（剣）</option>
+                                                <option value=10 data-val="4saber">デオン</option>
+                                                <option value=11 data-val="4archer">エミヤ</option>
+                                                <option value=12 data-val="5archer">ギルガメッシュ</option>
+                                                <option value=13 data-val="3archer">ロビンフッド</option>
+                                                <option value=14 data-val="4archer">アタランテ</option>
+                                                <option value=15 data-val="3archer">エウリュアレ</option>
+                                                <option value=16 data-val="1archer">アーラシュ</option>
+                                                <option value=17 data-val="3lancer">クーフーリン</option>
+                                                <option value=18 data-val="4lancer">エリザベート</option>
+                                                <option value=19 data-val="2lancer">弁慶</option>
+                                                <option value=20 data-val="3lancer">クーフーリン（プロト）</option>
+                                                <option value=21 data-val="2lancer">レオニダス</option>
+                                                <option value=22 data-val="3lancer">ロムルス</option>
+                                                <option value=23 data-val="3rider">メドューサ</option>
+                                                <option value=24 data-val="2rider">ゲオルギウス</option>
+                                                <option value=25 data-val="2rider">エドワード・ティーチ</option>
+                                                <option value=26 data-val="3rider">ブーディカ</option>
+                                                <option value=27 data-val="3rider">牛若丸</option>
+                                                <option value=28 data-val="3rider">アレキサンダー</option>
+                                                <option value=29 data-val="4rider">マリー・アントワネット</option>
+                                                <option value=30 data-val="4rider">マルタ</option>
+                                                <option value=31 data-val="3caster">メディア</option>
+                                                <option value=32 data-val="3caster">ジルドレェ</option>
+                                                <option value=33 data-val="2caster">アンデルセン</option>
+                                                <option value=34 data-val="2caster">シェイクスピア</option>
+                                                <option value=35 data-val="3caster">メフィストフェレス</option>
+                                                <option value=36 data-val="1caster">モーツァルト</option>
+                                                <option value=37 data-val="5caster">諸葛孔明</option>
+                                                <option value=38 data-val="3caster">クーフーリン（術）</option>
+                                                <option value=39 data-val="1assassin">佐々木小次郎</option>
+                                                <option value=40 data-val="2assassin">呪腕のハサン</option>
+                                                <option value=41 data-val="4assassin">ステンノ</option>
+                                                <option value=42 data-val="3assassin">荊軻</option>
+                                                <option value=43 data-val="2assassin">サンソン</option>
+                                                <option value=44 data-val="2assassin">ファントム・ジ・オペラ</option>
+                                                <option value=45 data-val="1assassin">マタ・ハリ</option>
+                                                <option value=46 data-val="4assassin">カーミラ</option>
+                                                <option value=47 data-val="4berserker">ヘラクレス</option>
+                                                <option value=48 data-val="4berserker">ランスロット</option>
+                                                <option value=49 data-val="3berserker">呂布</option>
+                                                <option value=50 data-val="1berserker">スパルタクス</option>
+                                                <option value=51 data-val="5berserker">坂田金時</option>
+                                                <option value=52 data-val="5berserker">ヴラド三世</option>
+                                                <option value=53 data-val="1berserker">アステリオス</option>
+                                                <option value=54 data-val="2berserker">カリギュラ</option>
+                                                <option value=55 data-val="3berserker">ダレイオス三世</option>
+                                                <option value=56 data-val="3berserker">清姫</option>
+                                                <option value=57 data-val="2berserker">エイリーク</option>
+                                                <option value=58 data-val="4berserker">タマモキャット</option>
+                                                <option value=59 data-val="5extra">ジャンヌ・ダルク</option>
+                                                <option value=60 data-val="5archer">オリオン</option>
+                                                <option value=61 data-val="4caster">エリザベート（術）</option>
+                                                <option value=62 data-val="5caster">玉藻の前</option>
+                                                <option value=63 data-val="3archer">ダビデ</option>
+                                                <option value=64 data-val="3lancer">ヘクトール</option>
+                                                <option value=65 data-val="5rider">フランシス・ドレイク</option>
+                                                <option value=66 data-val="4rider">アン＆メアリー</option>
+                                                <option value=67 data-val="4caster">メディア（リリィ）</option>
+                                                <option value=68 data-val="5saber">沖田総司</option>
+                                                <option value=69 data-val="4archer">織田信長</option>
+                                                <option value=70 data-val="5lancer">スカサハ</option>
+                                                <option value=71 data-val="3lancer">ディルムッド</option>
+                                                <option value=72 data-val="3saber">フェルグス</option>
+                                                <option value=73 data-val="4rider">アルトリア（サンタオルタ）</option>
+                                                <option value=74 data-val="4caster">ナーサリー・ライム</option>
+                                                <option value=75 data-val="5assassin">ジャック・ザ・リッパー</option>
+                                                <option value=76 data-val="5saber">モードレッド</option>
+                                                <option value=77 data-val="5archer">ニコラ・テスラ</option>
+                                                <option value=78 data-val="4lancer">アルトリア（槍オルタ）</option>
+                                                <option value=79 data-val="3caster">パルケルスス</option>
+                                                <option value=80 data-val="3caster">チャールズ・バベッジ</option>
+                                                <option value=81 data-val="3assassin">ジキル＆ハイド</option>
+                                                <option value=82 data-val="4berserker">フランケンシュタイン</option>
+                                                <option value=84 data-val="5archer">アルジュナ</option>
+                                                <option value=85 data-val="5lancer">カルナ</option>
+                                                <option value=86 data-val="5assassin">謎のヒロインX</option>
+                                                <option value=87 data-val="4lancer">フィン・マックール</option>
+                                                <option value=88 data-val="5lancer">ブリュンヒルデ</option>
+                                                <option value=89 data-val="4berserker">ベオウルフ</option>
+                                                <option value=90 data-val="5saber">ネロ（ブライド）</option>
+                                                <option value=91 data-val="5saber">両儀式（剣）</option>
+                                                <option value=92 data-val="4assassin">両儀式（殺）</option>
+                                                <option value=93 data-val="5extra">天草四郎</option>
+                                                <option value=94 data-val="4rider">アストルフォ</option>
+                                                <option value=95 data-val="3archer">子ギル</option>
+                                                <option value=96 data-val="5extra">巌窟王</option>
+                                                <option value=97 data-val="5berserker">ナイチンゲール</option>
+                                                <option value=98 data-val="5berserker">クーフーリン（オルタ）</option>
+                                                <option value=99 data-val="5rider">メイヴ</option>
+                                                <option value=100 data-val="4caster">エレナ</option>
+                                                <option value=101 data-val="4saber">ラーマ</option>
+                                                <option value=102 data-val="4lancer">李書文</option>
+                                                <option value=103 data-val="4caster">トーマス・エジソン</option>
+                                                <option value=104 data-val="3caster">ジェロニモ</option>
+                                                <option value=105 data-val="3archer">ビリー・ザ・キッド</option>
+                                                <option value=106 data-val="5extra">ジャンヌ・ダルク（オルタ）</option>
+                                                <option value=107 data-val="0extra">アンリマユ</option>
+                                                <option value=108 data-val="5rider">イスカンダル</option>
+                                                <option value=109 data-val="4assassin">エミヤ（殺）</option>
+                                                <option value=110 data-val="3assassin">百貌のハサン</option>
+                                                <option value=111 data-val="4caster">アイリスフィール</option>
+                                                <option value=112 data-val="5assassin">酒呑童子</option>
+                                                <option value=113 data-val="5caster">玄奘三蔵</option>
+                                                <option value=114 data-val="5berserker">源頼光</option>
+                                                <option value=115 data-val="4rider">坂田金時（騎）</option>
+                                                <option value=116 data-val="4berserker">茨木童子</option>
+                                                <option value=117 data-val="3assassin">風魔小太郎</option>
+                                                <option value=118 data-val="5rider">オジマンディアス</option>
+                                                <option value=119 data-val="5lancer">アルトリア（槍）</option>
+                                                <option value=120 data-val="4caster">ニトクリス</option>
+                                                <option value=121 data-val="4saber">ランスロット（剣）</option>
+                                                <option value=122 data-val="4archer">トリスタン</option>
+                                                <option value=123 data-val="4saber">ガウェイン</option>
+                                                <option value=124 data-val="3assassin">静謐のハサン</option>
+                                                <option value=125 data-val="3archer">俵藤太</option>
+                                                <option value=126 data-val="3saber">ベディヴィエール</option>
+                                                <option value=127 data-val="5caster">レオナルド・ダ・ヴィンチ</option>
+                                                <option value=128 data-val="5lancer">玉藻の前（水着）</option>
+                                                <option value=129 data-val="5archer">アルトリア（水着）</option>
+                                                <option value=130 data-val="4caster">マリー（水着）</option>
+                                                <option value=131 data-val="4archer">アン＆メア（水着）</option>
+                                                <option value=132 data-val="4rider">モードレッド</option>
+                                                <option value=133 data-val="4assassin">スカサハ（水着）</option>
+                                                <option value=134 data-val="4lancer">清姫（水着）</option>
+                                                <option value=135 data-val="4extra">マルタ（水着）</option>
+                                                <option value=136 data-val="5caster">イリヤスフィール</option>
+                                                <option value=137 data-val="4archer">クロエ</option>
+                                                <option value=138 data-val="4saber">エリザベート（剣）</option>
+                                                <option value=139 data-val="5assassin">クレオパトラ</option>
+                                                <option value=140 data-val="4lancer">ヴラド三世（槍）</option>
+                                                <option value=141 data-val="4lancer">ジャンヌ・ダルク・オルタ・サンタ・リリィ</option>
+                                                <option value=142 data-val="5archer">イシュタル</option>
+                                                <option value=143 data-val="5lancer">エルキドゥ</option>
+                                                <option value=144 data-val="5rider">ケツァル・コアトル</option>
+                                                <option value=145 data-val="4caster">ギルガメッシュ（術）</option>
+                                                <option value=146 data-val="4lancer">メドゥーサ（槍）</option>
+                                                <option value=147 data-val="4extra">>ゴルゴーン</option>
+                                                <option value=148 data-val="4lancer">ジャガーマン</option>
+                                                <option value=150 data-val="5caster">マーリン</option>
+                                                <option value=153 data-val="5saber">宮本武蔵</option>
+                                                <option value=154 data-val="5assassin">山の翁</option>
+                                                <option value=155 data-val="5berserker">謎のヒロインX（オルタ）</option>
+                                                <option value=156 data-val="5archer">新宿のアーチャー</option>
+                                                <option value=157 data-val="4archer">エミヤ（オルタ）</option>
+                                                <option value=158 data-val="4extra">新宿のアベンジャー</option>
+                                                <option value=159 data-val="4assassin">新宿のアサシン</option>
+                                                <option value=160 data-val="5saber">アーサー・ペンドラゴン（プロト）</option>
+                                                <option value=161 data-val="5berserker">土方歳三</option>
+                                                <option value=162 data-val="4berserker">茶々</option>
+                                                <option value=163 data-val="4extra">メルトリリス</option>
+                                                <option value=164 data-val="4extra">パッションリップ</option>
+                                                <option value=165 data-val="4saber">鈴鹿御前</option>
+                                                <option value=166 data-val="4extra">BB</option>
+                                                <option value=167 data-val="5extra">殺生院キアラ</option>
+                                                <option value=169 data-val="5caster">不夜城のキャスター</option>
+                                                <option value=170 data-val="4assassin">不夜城のアサシン</option>
+                                                <option value=171 data-val="4berserker">エルドラドのバーサーカー</option>
+                                                <option value=172 data-val="3rider">レジスタンスのライダー</option>
+                                                <option value=173 data-val="5extra">シャーロック・ホームズ</option>
+                                                <option value=174 data-val="1berserker">ポール・バニヤン</option>
+                                                <option value=175 data-val="5caster">ネロ（水着）</option>
+                                                <option value=176 data-val="4saber">フランケンシュタイン（水着）</option>
+                                                <option value=177 data-val="4assassin">ニトクリス（水着）</option>
+                                                <option value=178 data-val="4berserker">織田信長（水着）</option>
+                                                <option value=179 data-val="5rider">アルトリア（水着オルタ）</option>
+                                                <option value=180 data-val="4archer">エレナ（水着）</option>
+                                                <option value=181 data-val="4lancer">源頼光（水着）</option>
+                                                <option value=182 data-val="4rider">イシュタル（水着）</option>
+                                                <option value=183 data-val="4lancer">パールヴァティー</option>
+                                                <option value=184 data-val="4archer">アーチャー・インフェルノ</option>
+                                                <option value=185 data-val="4assassin">アサシン・パライソ</option>
+                                                <option value=186 data-val="3lancer">宝蔵院胤舜</option>
+                                                <option value=187 data-val="4saber">柳生但馬守宗矩</option>
+                                                <option value=188 data-val="4assassin">加藤段蔵</option>
+                                                <option value=189 data-val="5assassin">刑部姫</option>
+                                                <option value=190 data-val="4extra">メカエリチャン</option>
+                                                <option value=191 data-val="4extra">メカエリチャンII号機</option>
+                                                <option value=192 data-val="4caster">オケアノスのキャスター</option>
+                                                <option value=193 data-val="4lancer">哪吒</option>
+                                                <option value=194 data-val="4caster">ミドラーシュのキャスター</option>
+                                                <option value=195 data-val="5extra">アビゲイル・ウィリアムズ</option>
+                                                <option value=196 data-val="5lancer">エレキシュガル</option>
+                                                <option value=197 data-val="4archer">アルテラ・ザ・サン（タ）</option>
+                                                <option value=198 data-val="5extra">葛飾北斎</option>
+                                                <option value=199 data-val="5assassin">セミラミス</option>
+                                                <option value=200 data-val="4archer">浅上藤乃</option>
+                                        </select>
+                                </td>
                 </tr>
                 <tr>
                     <th></th>
