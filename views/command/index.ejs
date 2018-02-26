@@ -42,11 +42,11 @@
     </head>
     <body>
         <head>
-            <h1><%= title %></h1>
+            <h1 id="titlename"><%= title %></h1>
         </head>
-        <div role="main">
-            <table>
-                <% for (var j in content) { %> 
+        <div role="main" class="menuservant">
+            <table class="servants">
+                <% for (var j=0; j<3; j++) { %> 
                     <% for (var i in content) { %> 
                     <% if (number[j]==content[i].id) { %>
                     <tr>
@@ -65,13 +65,15 @@
             <form method="post" action="/command">
             <table>
                 <tr>
-                    <th>変更されるメンバー</th>
+                    <th>退場メンバー</th>
                     <td>
                         <input type="checkbox" name="before" value=1>前衛<br>
                         <input type="checkbox" name="before" value=2>中衛<br>
                         <input type="checkbox" name="before" value=3>後衛<br>
                     </td>
-                    <th>変更するメンバー</th>
+                </tr>
+                <tr>
+                    <th>追加メンバー</th>
                     <td>
                         <select class="parent" name="class" required>
                             <option value="" class="msg" disabled selected>-----サーヴァントのクラスを選択-----</option>
@@ -111,7 +113,7 @@
                             <option value="5extra">星５エクストラ</option>
                             <option value="4extra">星４エクストラ</option>
                             <option value="0extra">星０エクストラ</option>
-                        </select>
+                        </select><br>
                         <select class="children" name="after" disabled required>
                             <option value="not_selected" class="msg" disabled selected>-----サーヴァントを選択-----</option>
                                 <option value=1 data-val="4extra">マシュ・キリエライト</option>
@@ -260,7 +262,7 @@
                                 <option value=144 data-val="5rider">ケツァル・コアトル</option>
                                 <option value=145 data-val="4caster">ギルガメッシュ（術）</option>
                                 <option value=146 data-val="4lancer">メドゥーサ（槍）</option>
-                                <option value=147 data-val="4extra">>ゴルゴーン</option>
+                                <option value=147 data-val="4extra">ゴルゴーン</option>
                                 <option value=148 data-val="4lancer">ジャガーマン</option>
                                 <option value=150 data-val="5caster">マーリン</option>
                                 <option value=153 data-val="5saber">宮本武蔵</option>
@@ -313,13 +315,18 @@
                         </select>
                     </td>
                 </tr>
-                <tr>
-                    <th></th>
-                    <td><input type="submit" value="変更"></td>
-                </tr>
             </table>
+            <input type="submit" class="buttons" value="変更">
             </form>
-            <input type="button" value="コマンドカードを初期状態に戻す" onclick="window.location.reload();" />
+            <input type="button" class="buttons" value="コマンドカードを初期状態に戻す" onclick="window.location.reload();" />
         </div>
+        <p class="menutop">説明</p>
+        <ul>
+            <li class="menuli">使用されたコマンドカードをクリックしてください。クリックされたカードは紫色に変化します。</li>
+            <li class="menuli">コマンドカードが埋まったら「コマンドカードを初期状態に戻す」ボタンを押せばリセットされます。（このボタンはただのリロードボタンなので15個全部押し直しても問題ないです）</li>
+            <li class="menuli">仕様上、カルデア戦闘服のオーダーチェンジによるメンバー変更には対応していません。ごめんなさい。カルデア戦闘服を使用しないか（横暴）、オダチェン前の使用カードを覚えておくようにお願いします。（なんにせよ横暴）</li>
+            <li class="menuli">手元で調べた感じだと、オダチェンしたら、残った2人のカードを使い切ったタイミングでコマンドカードのリセットが起こるみたいなので参考までに。</li>
+        </ul>
+        <p class="menu"><a href="/">トップに戻る</a></p>
     </body>
 </html>

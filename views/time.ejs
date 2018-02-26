@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>FGO Time Check</title>
+        <link rel='stylesheet' href='/stylesheets/style_time.css' />
+    </head>
+
+    <body>
+        <header>
+            <h1><%= title %></h1>
+        </header>
+        <p class="menu">説明</p>
+        <ul>
+            <li class="menuli">下の「現在のAP」に現時点でのAPを、「調べたいAP」に回復してほしいAPの量を指定し、チェックボタンを押すと、下に時間が出てきます。</li>
+            <li class="menuli">APを変えてチェックを押すと最初に出したものは消えずにその下にまた指定されたAPに回復する時間が出てきます。消したい場合はリセットボタンを押してください。</li>
+            <li class="menuli">APが１回復するのに5分かかるので、表示された時間には若干の誤差が出ます。</li>
+        </ul>
+        <p class="menu"><a href="/" class="totop">トップに戻る</a></p>
+        <form class="timecheck">
+            <label for="fromap">現時点のAP：</label>
+            <input id="fromap" name="fromap" type"number" size="30" /><br>
+            <label for="toap">調べたいAP：</label>
+            <input id="toap" name="toap" type"number" size="30" />
+            <br>
+            <input id="btn" type="button" value="チェック">
+            <input id="btn2" type="button" value="リセット">
+        </form>
+        <div id="result"></div>
+        <script type="text/javascript"  src="/javascripts/time.js"></script>
+    </body>
+</html>

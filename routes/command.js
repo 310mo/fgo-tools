@@ -21,7 +21,7 @@ router.get('/', (req, res, next) => {
         db.all(q, id1, id2, id3, (err, rows) => {
             if(!err) {
                 var data = {
-                    title: 'メンバー',
+                    title: '戦闘中のサーヴァント',
                     content: rows,
                     number: nums
                 }
@@ -59,7 +59,7 @@ router.post('/', (req, res, next) => {
         db.all(q, id1, id2, id3, (err, rows) => {
             if(!err) {
                 var data = {
-                    title: 'メンバー',
+                    title: '戦闘中のサーヴァント',
                     content: rows,
                     number: [id1, id2, id3]
                 }
@@ -72,7 +72,7 @@ router.post('/', (req, res, next) => {
 
 router.get('/set', (req, res, next) => {
     var data = {
-        title: 'スタメン登録'
+        title: 'サーヴァント選択'
     }
     res.render('command/set', data);
 });

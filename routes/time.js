@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'FGO TOOLS' });
+  res.render('time', { title: 'AP回復時間チェック' });
 });
 
 module.exports = router;

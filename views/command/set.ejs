@@ -73,13 +73,13 @@
     </script>
     <body>
         <head>
-            <h1><%= title %></h1>
+            <h1 id="titlename"><%= title %></h1>
         </head>
-        <div role="main">
+        <div role="main" class="menutop">
             <form method="post" action="/command/set">
             <table>
                 <tr>
-                    <th>ID検索</th>
+                    <th>サーヴァント指定</th>
                     <td>
                             <select class="parent" name="class" required>
                                 <option value="" class="msg" disabled selected>-----サーヴァントのクラスを選択-----</option>
@@ -268,7 +268,7 @@
                                         <option value=144 data-val="5rider">ケツァル・コアトル</option>
                                         <option value=145 data-val="4caster">ギルガメッシュ（術）</option>
                                         <option value=146 data-val="4lancer">メドゥーサ（槍）</option>
-                                        <option value=147 data-val="4extra">>ゴルゴーン</option>
+                                        <option value=147 data-val="4extra">ゴルゴーン</option>
                                         <option value=148 data-val="4lancer">ジャガーマン</option>
                                         <option value=150 data-val="5caster">マーリン</option>
                                         <option value=153 data-val="5saber">宮本武蔵</option>
@@ -508,7 +508,7 @@
                                             <option value=144 data-val="5rider">ケツァル・コアトル</option>
                                             <option value=145 data-val="4caster">ギルガメッシュ（術）</option>
                                             <option value=146 data-val="4lancer">メドゥーサ（槍）</option>
-                                            <option value=147 data-val="4extra">>ゴルゴーン</option>
+                                            <option value=147 data-val="4extra">ゴルゴーン</option>
                                             <option value=148 data-val="4lancer">ジャガーマン</option>
                                             <option value=150 data-val="5caster">マーリン</option>
                                             <option value=153 data-val="5saber">宮本武蔵</option>
@@ -748,7 +748,7 @@
                                                 <option value=144 data-val="5rider">ケツァル・コアトル</option>
                                                 <option value=145 data-val="4caster">ギルガメッシュ（術）</option>
                                                 <option value=146 data-val="4lancer">メドゥーサ（槍）</option>
-                                                <option value=147 data-val="4extra">>ゴルゴーン</option>
+                                                <option value=147 data-val="4extra">ゴルゴーン</option>
                                                 <option value=148 data-val="4lancer">ジャガーマン</option>
                                                 <option value=150 data-val="5caster">マーリン</option>
                                                 <option value=153 data-val="5saber">宮本武蔵</option>
@@ -801,12 +801,16 @@
                                         </select>
                                 </td>
                 </tr>
-                <tr>
-                    <th></th>
-                    <td><input type="submit" value="検索"></td>
-                </tr>
             </table>
+            <input type="submit" class="buttons" value="指定">
             </form>
+            <p><a href="/">トップに戻る</a></p>
         </div>
+        <p class="menutop">説明</p>
+        <ul>
+            <li class="menuli">戦闘をするサーヴァントをここで指定してください</li>
+            <li class="menuli">「サーヴァントのクラスを選択」で、レアリティとクラスを指定し、「サーヴァントを選択」でサーヴァントを指定して指定ボタンを押してください</li>
+            <li class="menuli">残りのサーヴァントが３騎いない時はクラスを適当に指定したうえでサーヴァントを指定せずに指定ボタンを押してください</li>
+        </ul>
     </body>
 </html>
