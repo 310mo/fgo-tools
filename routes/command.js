@@ -8,6 +8,7 @@ var db = new sqlite3.Database('fgo-command_cards.sqlite3');
 router.get('/', (req, res, next) => {
     if(req.session.message != undefined) {
         var q = "select * from fgodata where id IN (?,?,?)";
+        var q2 = "select * from fgodata";
         id1 = req.session.message[0];
         id2 = req.session.message[1];
         id3 = req.session.message[2];
@@ -16,18 +17,24 @@ router.get('/', (req, res, next) => {
     else {
         console.log('undefined!');
         var q = "select * from fgodata where id IN (1,2,3)";
+        var q2 = "select * from fgodata";
     }
     db.serialize(() => {
         db.all(q, id1, id2, id3, (err, rows) => {
             if(!err) {
-                var data = {
-                    title: '戦闘中のサーヴァント',
-                    content: rows,
-                    number: nums
-                }
-                console.log(rows);
-                console.log('nums = '+nums[0]+', '+nums[1]+', '+nums[2]);
-                res.render('command/index', data);
+                db.all(q2, (err, rows2) => {
+                    if(!err) {
+                        var data = {
+                            title: '戦闘中のサーヴァント',
+                            content: rows,
+                            content2: rows2,
+                            number: nums
+                        }
+                        console.log(rows);
+                        console.log('nums = '+nums[0]+', '+nums[1]+', '+nums[2]);
+                        res.render('command/index', data);
+                    }
+                });
             }
         });
     });
@@ -56,25 +63,38 @@ router.post('/', (req, res, next) => {
     }
     db.serialize(() => {
         var q = "select * from fgodata where id IN (?,?,?)";
+        var q2 = "select * from fgodata";
         db.all(q, id1, id2, id3, (err, rows) => {
             if(!err) {
-                var data = {
-                    title: '戦闘中のサーヴァント',
-                    content: rows,
-                    number: [id1, id2, id3]
-                }
-                console.log(rows);
-                res.render('command/index', data);
+                db.all(q2, (err, rows2) => {
+                    if(!err) {
+                        var data = {
+                            title: '戦闘中のサーヴァント',
+                            content: rows,
+                            content2: rows2,
+                            number: [id1, id2, id3]
+                        }
+                        console.log(rows);
+                        res.render('command/index', data);
+                    }
+                });
             }
         });
     });
 })
 
 router.get('/set', (req, res, next) => {
-    var data = {
-        title: 'サーヴァント選択'
-    }
-    res.render('command/set', data);
+    db.serialize(() => {
+        db.all("select * from fgodata", (err, rows) => {
+            if(!err) {
+                var data = {
+                    title: 'サーヴァント選択',
+                    content: rows
+                }
+                res.render('command/set', data);
+            }
+        });
+    });
 });
 
 router.post('/set', (req, res, next) => {
