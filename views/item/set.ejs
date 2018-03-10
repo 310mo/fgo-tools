@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script>
+         $(function() {
+            var $children = $('.children');
+            var original = $children.html();
+            
+
+            $('.parent').change(function() {
+                var val1 = $(this).val();
+
+                $children.html(original).find('option').each(function() {
+                var val2 = $(this).data('val');
+                if (val1 != val2) {
+                    $(this).not(':first-child').remove();
+                }
+                });
+
+                if ($(this).val() === '') {
+                $children.attr('disabled', 'disabled');
+                } else {
+                $children.removeAttr('disabled');
+                }
+
+            });
+        });
+    </script>
+    <body>
+        <head>
+            <h1 id="titlename"><%= title %></h1>
+        </head>
+        <div role="main" class="menutop">
+            <form method="post" action="/item/set">
+                <table>
+                    <tr>
+                        <th>サーヴァント選択</th>
+                        <td>
+                            <select class="parent" name="class" required>
+                                <option value="" class="msg" disabled selected>-----サーヴァントのクラスを選択-----</option>
+                                <option value="5saber">星５セイバー</option>
+                                <option value="4saber">星４セイバー</option>
+                                <option value="3saber">星３セイバー</option>
+                                <option value="5archer">星５アーチャー</option>
+                                <option value="4archer">星４アーチャー</option>
+                                <option value="3archer">星３アーチャー</option>
+                                <option value="2archer">星２アーチャー</option>
+                                <option value="1archer">星１アーチャー</option>
+                                <option value="5lancer">星５ランサー</option>
+                                <option value="4lancer">星４ランサー</option>
+                                <option value="3lancer">星３ランサー</option>
+                                <option value="2lancer">星２ランサー</option>
+                                <option value="1lancer">星１ランサー</option>
+                                <option value="5rider">星５ライダー</option>
+                                <option value="4rider">星４ライダー</option>
+                                <option value="3rider">星３ライダー</option>
+                                <option value="2rider">星２ライダー</option>
+                                <option value="1rider">星１ライダー</option>
+                                <option value="5caster">星５キャスター</option>
+                                <option value="4caster">星４キャスター</option>
+                                <option value="3caster">星３キャスター</option>
+                                <option value="2caster">星２キャスター</option>
+                                <option value="1caster">星１キャスター</option>
+                                <option value="5assassin">星５アサシン</option>
+                                <option value="4assassin">星４アサシン</option>
+                                <option value="3assassin">星３アサシン</option>
+                                <option value="2assassin">星２アサシン</option>
+                                <option value="1assassin">星１アサシン</option>
+                                <option value="5berserker">星５バーサーカー</option>
+                                <option value="4berserker">星４バーサーカー</option>
+                                <option value="3berserker">星３バーサーカー</option>
+                                <option value="2berserker">星２バーサーカー</option>
+                                <option value="1berserker">星１バーサーカー</option>
+                                <option value="5extra">星５エクストラ</option>
+                                <option value="4extra">星４エクストラ</option>
+                                <option value="0extra">星０エクストラ</option>
+                            </select><br>
+                            <select class="children" name="id" disabled required>
+                                <option value="not_selected" class="msg" disabled selected>-----サーヴァントを選択-----</option>
+                                    <% for(var i in content) { %>
+                                        <% var obj = content[i]; %>
+                                        <option value=<%= obj.id %> data-val=<%= obj.class %>><%= obj.name %></option>
+                                    <% } %>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>現在の再臨段階</th>   
+                        <td>
+                            <select name="sairinbefore">
+                                <option value=0>第１段階前</option>
+                                <option value=1>第１段階〜第２段階前</option>
+                                <option value=2>第２段階〜第３段階前</option>
+                                <option value=3>第３段階〜第４段階前</option>
+                                <option value=4>第４段階</option>
+                            </select>
+                        </td> 
+                        <th>育てたい再臨段階</th>   
+                        <td>
+                            <select name="sairinafter">
+                                <option value=0>第１段階前</option>
+                                <option value=1>第１段階〜第２段階前</option>
+                                <option value=2>第２段階〜第３段階前</option>
+                                <option value=3>第３段階〜第４段階前</option>
+                                <option value=4>第４段階</option>
+                            </select>
+                        </td> 
+                    </tr>
+                    <tr>
+                        <th>現在のスキル１のレベル</th>
+                        <td>
+                            <select name="skill1before">
+                                <option value=1>レベル１</option>
+                                <option value=2>レベル２</option>
+                                <option value=3>レベル３</option>
+                                <option value=4>レベル４</option>
+                                <option value=5>レベル５</option>
+                                <option value=6>レベル６</option>
+                                <option value=7>レベル７</option>
+                                <option value=8>レベル８</option>
+                                <option value=9>レベル９</option>
+                                <option value=10>レベル１０</option>
+                            </select>
+                        </td>
+                        <th>育てたいスキル１のレベル</th>
+                        <td>
+                            <select name="skill1after">
+                                <option value=1>レベル１</option>
+                                <option value=2>レベル２</option>
+                                <option value=3>レベル３</option>
+                                <option value=4>レベル４</option>
+                                <option value=5>レベル５</option>
+                                <option value=6>レベル６</option>
+                                <option value=7>レベル７</option>
+                                <option value=8>レベル８</option>
+                                <option value=9>レベル９</option>
+                                <option value=10>レベル１０</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>現在のスキル２のレベル</th>
+                        <td>
+                            <select name="skill2before">
+                                <option value=1>レベル１</option>
+                                <option value=2>レベル２</option>
+                                <option value=3>レベル３</option>
+                                <option value=4>レベル４</option>
+                                <option value=5>レベル５</option>
+                                <option value=6>レベル６</option>
+                                <option value=7>レベル７</option>
+                                <option value=8>レベル８</option>
+                                <option value=9>レベル９</option>
+                                <option value=10>レベル１０</option>
+                            </select>
+                        </td>
+                        <th>育てたいスキル２のレベル</th>
+                        <td>
+                            <select name="skill2after">
+                                <option value=1>レベル１</option>
+                                <option value=2>レベル２</option>
+                                <option value=3>レベル３</option>
+                                <option value=4>レベル４</option>
+                                <option value=5>レベル５</option>
+                                <option value=6>レベル６</option>
+                                <option value=7>レベル７</option>
+                                <option value=8>レベル８</option>
+                                <option value=9>レベル９</option>
+                                <option value=10>レベル１０</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>現在のスキル３のレベル</th>
+                        <td>
+                            <select name="skill3before">
+                                <option value=1>レベル１</option>
+                                <option value=2>レベル２</option>
+                                <option value=3>レベル３</option>
+                                <option value=4>レベル４</option>
+                                <option value=5>レベル５</option>
+                                <option value=6>レベル６</option>
+                                <option value=7>レベル７</option>
+                                <option value=8>レベル８</option>
+                                <option value=9>レベル９</option>
+                                <option value=10>レベル１０</option>
+                            </select>
+                        </td>
+                        <th>育てたいスキル３のレベル</th>
+                        <td>
+                            <select name="skill3after">
+                                <option value=1>レベル１</option>
+                                <option value=2>レベル２</option>
+                                <option value=3>レベル３</option>
+                                <option value=4>レベル４</option>
+                                <option value=5>レベル５</option>
+                                <option value=6>レベル６</option>
+                                <option value=7>レベル７</option>
+                                <option value=8>レベル８</option>
+                                <option value=9>レベル９</option>
+                                <option value=10>レベル１０</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" class="buttons" value="指定">
+            </form>
+        </div>
+        <p class="menutop">説明</p>
+        <ul>
+            <li class="menuli">育成したいサーヴァントをここで指定してください</li>
+            <li class="menuli">「サーヴァントのクラスを選択」で、レアリティとクラスを指定し、「サーヴァントを選択」でサーヴァントを指定して指定ボタンを押してください</li>
+            <li class="menuli">現在の再臨状態及びスキルレベルを入力した上で、育成目標とする再臨状態及びスキルレベルを選択してください。目標とする状態までに必要な素材数の合計が表示されます。</li>
+            <li class="menuli">データを手打ちで入力したわけではないのでスクレイピングをミスってどこかで素材数が狂ってるかもしれないです。間違いを見つけた場合は<a href="https://twitter.com/kanoeuma_satomo">こちらのTwitterアカウント</a>まで知らせていただけると助かります。</li>
+        </ul>
+        <p class="menu"><a href="/">トップに戻る</a></p>
+    </body>
+</html>

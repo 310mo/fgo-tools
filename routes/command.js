@@ -30,7 +30,7 @@ router.get('/', (req, res, next) => {
                             content2: rows2,
                             number: nums
                         }
-                        console.log(rows);
+                        console.log('id is '+rows['id']);
                         console.log('nums = '+nums[0]+', '+nums[1]+', '+nums[2]);
                         res.render('command/index', data);
                     }
