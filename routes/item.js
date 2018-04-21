@@ -88,6 +88,9 @@ router.get('/', (req, res, next) => {
                         res.render('item/error', {content: '無効な入力です'});
                     }
                 }
+                else {
+                    res.render('item/error', {content: '無効な入力です'});
+                }
             });
         });
     });
