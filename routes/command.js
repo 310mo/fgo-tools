@@ -15,9 +15,10 @@ router.get('/', (req, res, next) => {
         nums = [id1, id2, id3];
     }
     else {
-        console.log('undefined!');
+        /*console.log('undefined!');
         var q = "select * from fgodata where id IN (1,2,3)";
-        var q2 = "select * from fgodata";
+        var q2 = "select * from fgodata";*/
+        res.render('item/error', {content: '無効な入力です'});
     }
     db.serialize(() => {
         db.all(q, id1, id2, id3, (err, rows) => {

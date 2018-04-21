@@ -6,6 +6,8 @@ var sqlite3 = require('sqlite3');
 var db = new sqlite3.Database('fgo-command_cards.sqlite3');
 
 router.get('/', (req, res, next) => {
+    //console.log(req.session.skillid);
+    if(req.session.skillid!=undefined) {
     db.serialize(() => {
         var q_name = "select * from fgodata where id = "+req.session.skillid;
         db.get(q_name, (err, row_title) => {
@@ -94,6 +96,10 @@ router.get('/', (req, res, next) => {
             });
         });
     });
+    }
+    else {
+        res.render('item/error', {content: '無効な入力です'});
+    }
 });
 
 router.get('/set', (req, res, next) => {
