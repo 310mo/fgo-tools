@@ -9,9 +9,9 @@
         <h1 id="titlename"><%=title %>の必要素材数</h1>
     <div role="main" class="menutop2">
         <table>
-            <% var items = Array(69); %>
-            <% var itemnames = ['英雄の証', '凶骨', '竜の牙', '虚影の塵', '愚者の鎖', '万死の毒針', '魔術髄液', '宵哭きの鉄杭', '世界樹の種', 'ゴーストランタン', '八連双晶', '蛇の宝玉', '鳳凰の羽根', '無間の歯車', '禁断の頁', 'ホムンクルスベビー', '隕蹄鉄', '大騎士勲章', '追憶の貝殻', '枯淡勾玉', '混沌の爪', '蛮神の心臓', '竜の逆鱗', '精霊根', '戦馬の幼角', '血の涙石', '黒獣脂', '封魔のランプ', '智慧のスカラベ', '原初の産毛', '呪獣胆石', '奇奇神酒', '伝承結晶', '剣の輝石', '弓の輝石', '槍の輝石', '騎の輝石', '術の輝石', '殺の輝石', '狂の輝石', '剣の魔石', '弓の魔石', '槍の魔石', '騎の魔石', '術の魔石', '殺の魔石', '狂の魔石', '剣の秘石', '弓の秘石', '槍の秘石', '騎の秘石', '術の秘石', '殺の秘石', '狂の秘石', 'セイバーピース', 'アーチャーピース', 'ランサーピース', 'ライダーピース', 'キャスターピース', 'アサシンピース', 'バーサーカーピース','セイバーモニュメント', 'アーチャーモニュメント', 'ランサーモニュメント', 'ライダーモニュメント', 'キャスターモニュメント', 'アサシンモニュメント', 'バーサーカーモニュメント', 'イベント再臨素材']; %>
-            <% for(var i=0; i<69; i++) { %>
+            <% var items = Array(71); %>
+            <% var itemnames = ['英雄の証', '凶骨', '竜の牙', '虚影の塵', '愚者の鎖', '万死の毒針', '魔術髄液', '宵哭きの鉄杭', '世界樹の種', 'ゴーストランタン', '八連双晶', '蛇の宝玉', '鳳凰の羽根', '無間の歯車', '禁断の頁', 'ホムンクルスベビー', '隕蹄鉄', '大騎士勲章', '追憶の貝殻', '枯淡勾玉', '混沌の爪', '蛮神の心臓', '竜の逆鱗', '精霊根', '戦馬の幼角', '血の涙石', '黒獣脂', '封魔のランプ', '智慧のスカラベ', '原初の産毛', '呪獣胆石', '奇奇神酒', '伝承結晶', '剣の輝石', '弓の輝石', '槍の輝石', '騎の輝石', '術の輝石', '殺の輝石', '狂の輝石', '剣の魔石', '弓の魔石', '槍の魔石', '騎の魔石', '術の魔石', '殺の魔石', '狂の魔石', '剣の秘石', '弓の秘石', '槍の秘石', '騎の秘石', '術の秘石', '殺の秘石', '狂の秘石', 'セイバーピース', 'アーチャーピース', 'ランサーピース', 'ライダーピース', 'キャスターピース', 'アサシンピース', 'バーサーカーピース','セイバーモニュメント', 'アーチャーモニュメント', 'ランサーモニュメント', 'ライダーモニュメント', 'キャスターモニュメント', 'アサシンモニュメント', 'バーサーカーモニュメント', 'イベント再臨素材', '励振火薬', '永遠結氷']; %>
+            <% for(var i=0; i<71; i++) { %>
                     <% items[i] = 0; %>
             <% } %>
 
@@ -85,6 +85,9 @@
                 <% items[66] += content[i].assassinmonument; %>
                 <% items[67] += content[i].berserkermonument; %>
                 <% items[68] += content[i].others; %>
+                <% items[69] += content[i].reishinkayaku; %>
+                <% items[70] += content[i].eienkepyo; %>
+
             <% } %>
             <% for (var i in content_s1) { %>
                 <% items[0] += content_s1[i].eiyunoakashi; %>
@@ -156,6 +159,8 @@
                 <% items[66] += content_s1[i].assassinmonument; %>
                 <% items[67] += content_s1[i].berserkermonument; %>
                 <% items[68] += content_s1[i].others; %>
+                <% items[69] += content_s1[i].reishinkayaku; %>
+                <% items[70] += content_s1[i].eienkepyo; %>
             <% } %>
             <% for (var i in content_s2) { %>
                 <% items[0] += content_s2[i].eiyunoakashi; %>
@@ -227,6 +232,8 @@
                 <% items[66] += content_s2[i].assassinmonument; %>
                 <% items[67] += content_s2[i].berserkermonument; %>
                 <% items[68] += content_s2[i].others; %>
+                <% items[69] += content_s2[i].reishinkayaku; %>
+                <% items[70] += content_s2[i].eienkepyo; %>
             <% } %>
             <% for (var i in content_s3) { %>
                 <% items[0] += content_s3[i].eiyunoakashi; %>
@@ -298,8 +305,10 @@
                 <% items[66] += content_s3[i].assassinmonument; %>
                 <% items[67] += content_s3[i].berserkermonument; %>
                 <% items[68] += content_s3[i].others; %>
+                <% items[69] += content_s3[i].reishinkayaku; %>
+                <% items[70] += content_s3[i].eienkepyo; %>
             <% } %>
-            <% for (var i=0; i<69; i++) { %>
+            <% for (var i=0; i<71; i++) { %>
                 <% if(items[i]!=0) { %>
                     <tr><%= itemnames[i] %>： <%= items[i] %></tr><br>
                 <% } %>

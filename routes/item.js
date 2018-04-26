@@ -31,6 +31,7 @@ router.get('/', (req, res, next) => {
                             if(!err) {
                                 if(num_s1>=0) {
                                     var id_s1 = Number(row.id) - 2 + Number(req.session.skill1before) + 4;
+                                    console.log(id_s1);
                                     if(num_s1>0) {
                                         var q_s1 = "select * from skilldata limit " + num_s1 + " offset "+id_s1;
                                     }
