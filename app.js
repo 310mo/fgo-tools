@@ -11,6 +11,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var command = require('./routes/command');
 var time = require('./routes/time');
+var time2 = require('./routes/time2');
 var item = require('./routes/item');
 
 var app = express();
@@ -40,6 +41,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/command', command);
 app.use('/time', time);
+app.use('/time2', time2);
 app.use('/item', item);
 
 

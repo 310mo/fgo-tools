@@ -1,12 +1,12 @@
-var fromap = 0;
-var toap = 0;
+var hour = 0;
+var minute = 0;
 var plustime = 0;
 var dat = new Date();
 var dat2 = new Date();
 var flug = 0;
 var text;
 var text2;
-var text3;
+
 
 function getnowtm(dat, dat2) {
     dat.setMonth(dat2.getUTCMonth());
@@ -20,56 +20,39 @@ function getnowtm(dat, dat2) {
 }
 
 function viewing(dat) {
-    fromap = document.getElementById('fromap');
+    hour = document.getElementById('hour');
+    minute = document.getElementById('minute');
     toap = document.getElementById('toap');
-    console.log('now ap is',fromap.value);
     console.log('to ap is', toap.value);
 
-    if((toap.value-fromap.value)<0) {
-        flug = 1;
+    /*dat.setMinutes(dat.getMinutes()+5*(toap.value-fromap.value));
+    console.log(dat.getMonth(), dat.getDate(), dat.getHours(), dat.getMinutes());*/
+    if(hour<dat.getMinutes()) {
+        hour += 24;
     }
-    else {
-        dat.setMinutes(dat.getMinutes()+5*(toap.value-fromap.value));
-        console.log(dat.getMonth(), dat.getDate(), dat.getHours(), dat.getMinutes());
-    }
+    var points = ((hour.value-dat.getHours())*12 + (minute.value-dat.getMinutes()) / 5);
+    console.log(points);
+    var re_points = toap.value - points;
+    console.log(re_points);
 
     var anchor = document.createElement('h2');
     var br1 = document.createElement('br');
-    var br2 = document.createElement('br');
-    var br3 = document.createElement('br');
     var img = document.createElement('img');
     var img2 = document.createElement('img');
-    anchor.className = 'anc';
-    img.className = 'saber';
-    img2.className = 'hukidashi';
+    img.className = 'saber2';
+    img2.className = 'hukidashi2';
     img.src = '/images/saber.PNG';
     img2.src = '/images/hukidashi.png';
-    if(flug==0){
-        texta = document.createTextNode('予定時刻は');
-        text = document.createTextNode(dat.getMonth()+'月'+dat.getDate()+'日');
-        text2 = document.createTextNode(dat.getHours()+'時'+dat.getMinutes() + '分');
-        text3 = document.createTextNode('です');
-
-    }
-    else{
-        text = document.createTextNode('それ調べる意味なくない？');
-    }
-    anchor.appendChild(texta);
-    anchor.appendChild(br1);
+    anchor.className = 'anc2';
+    text = document.createTextNode('現時点でAPを'+parseInt(String(re_points)));
+    text2 = document.createTextNode('にしておきましょう');
     anchor.appendChild(text);
+    anchor.appendChild(br1);
     anchor.appendChild(text2);
-    anchor.appendChild(br3);
-    anchor.appendChild(text3);
-
     var result = document.getElementById('result');
-    console.log(result.firstChild);
-    if(result.firstChild!=null){
-        result.removeChild(result.firstChild);
-    }
     result.appendChild(img2);
     result.appendChild(img);
     result.appendChild(anchor);
-    
 }
 
 function reset(){
