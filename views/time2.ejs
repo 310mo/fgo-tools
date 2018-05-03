@@ -11,12 +11,8 @@
         <header>
             <h1><%= title %></h1>
         </header>
-        <p class="menu">説明</p>
-        <ul>
-            <li class="menuli">下の「時間指定」に次にFGOを始める時間24時間表示で、「調べたいAP」にその時間に回復していてほしいAPの量を指定し、チェックボタンを押すと、下に今残しておくべきAPの量が出てきます。</li>
-            <li class="menuli">APが１回復するのに5分かかるので、表示された時間には若干の誤差が出ます。</li>
-        </ul>
-        <p class="menu"><a href="/" class="totop">トップに戻る</a></p>
+        <div id="result2"></div>
+        <div id="result"></div>
         <form class="timecheck">
             <label for="fromap">時間指定：</label>
             <input id="hour" name="hour" type"number" size="10" />時<input id="minute" name="minute" type"number" size="10" />分<br>
@@ -26,7 +22,12 @@
             <input id="btn" type="button" value="チェック">
             <input id="btn2" type="button" value="リセット">
         </form>
-        <div id="result"></div>
+        <p class="menu">説明</p>
+        <ul>
+            <li class="menuli">下の「時間指定」に次にFGOを始める時間24時間表示で、「調べたいAP」にその時間に回復していてほしいAPの量を指定し、チェックボタンを押すと、下に今残しておくべきAPの量が出てきます。</li>
+            <li class="menuli">APが１回復するのに5分かかるので、表示された時間には若干の誤差が出ます。</li>
+        </ul>
+        <p class="menu"><a href="/" class="totop">トップに戻る</a></p>
         <script type="text/javascript"  src="/javascripts/time2.js"></script>
     </body>
 </html>

@@ -62,14 +62,20 @@ function viewing(dat) {
     anchor.appendChild(text3);
 
     var result = document.getElementById('result');
+    var result2 = document.getElementById('result2');
     console.log(result.firstChild);
     if(result.firstChild!=null){
         while(result.firstChild!=null) {
             result.removeChild(result.firstChild);
         }
     }
-    result.appendChild(img2);
-    result.appendChild(img);
+    if(result2.firstChild!=null){
+        while(result2.firstChild!=null) {
+            result2.removeChild(result2.firstChild);
+        }
+    }
+    result2.appendChild(img2);
+    result2.appendChild(img);
     result.appendChild(anchor);
     
 }

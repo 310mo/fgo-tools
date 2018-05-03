@@ -11,13 +11,8 @@
         <header>
             <h1><%= title %></h1>
         </header>
-        <p class="menu">説明</p>
-        <ul>
-            <li class="menuli">下の「現時点のAP」に現時点でのAPを、「調べたいAP」に回復してほしいAPの量を指定し、チェックボタンを押すと、下に時間が出てきます。</li>
-            <li class="menuli">APが１回復するのに5分かかるので、表示された時間には若干の誤差が出ます。</li>
-            <li class="menuli">「現時点のAP」より小さい値を「調べたいAP」に入れると変なメッセージが出ます。その場合「調べたいAP」を入れ直しても変なメッセージが出続けるので一旦リセットしてください。お願いします。</li>
-        </ul>
-        <p class="menu"><a href="/" class="totop">トップに戻る</a></p>
+        <div id="result2"></div>
+        <div id="result"></div>
         <form class="timecheck">
             <label for="fromap">現時点のAP：</label>
             <input id="fromap" name="fromap" type"number" size="30" /><br>
@@ -27,7 +22,15 @@
             <input id="btn" type="button" value="チェック">
             <input id="btn2" type="button" value="リセット">
         </form>
-        <div id="result"></div>
+        <p class="menu">説明</p>
+        <ul>
+            <li class="menuli">下の「現時点のAP」に現時点でのAPを、「調べたいAP」に回復してほしいAPの量を指定し、チェックボタンを押すと、下に時間が出てきます。</li>
+            <li class="menuli">APが１回復するのに5分かかるので、表示された時間には若干の誤差が出ます。</li>
+            <li class="menuli">「現時点のAP」より小さい値を「調べたいAP」に入れると変なメッセージが出ます。その場合「調べたいAP」を入れ直しても変なメッセージが出続けるので一旦リセットしてください。お願いします。</li>
+        </ul>
+        <p class="menu"><a href="/" class="totop">トップに戻る</a></p>
+        
+        
         <script type="text/javascript"  src="/javascripts/time.js"></script>
     </body>
 </html>
