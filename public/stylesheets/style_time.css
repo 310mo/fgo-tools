@@ -47,22 +47,6 @@ form {
     font-size: 20px;
 }
 
-@media only screen and (max-width: 600px) {
-    .anc {
-        position: relative;
-        top: -330px;
-        left: 700px;
-        font-size: 10px;
-    }
-
-    .anc2 {
-        position: relative;
-        top: -320px;
-        left: 700px;
-        font-size: 10px;
-    }
-}
-
 .saber2 {
     position: relative;
     top: 0px;
@@ -77,6 +61,54 @@ form {
     left: 630px;
     width: 300px;
     height: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .anc {
+        position: relative;
+        top: -330px;
+        left: 370px;
+        font-size: 15px;
+    }
+
+    .saber {
+        position: relative;
+        top: 0px;
+        left: -180px;
+        width: 300px;
+        height: auto;
+    }
+    
+    .hukidashi {
+        position: relative;
+        top: -200px;
+        left: 300px;
+        width: 300px;
+        height: auto;
+    }
+
+    .anc2 {
+        position: relative;
+        top: -320px;
+        left: 370px;
+        font-size: 15px;
+    }
+
+    .saber2 {
+        position: relative;
+        top: 0px;
+        left: -180px;
+        width: 300px;
+        height: auto;
+    }
+    
+    .hukidashi2 {
+        position: relative;
+        top: -200px;
+        left: 300px;
+        width: 300px;
+        height: auto;
+    }
 }
 
 .menu {
