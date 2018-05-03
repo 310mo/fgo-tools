@@ -28,7 +28,7 @@ function viewing(dat) {
     /*dat.setMinutes(dat.getMinutes()+5*(toap.value-fromap.value));
     console.log(dat.getMonth(), dat.getDate(), dat.getHours(), dat.getMinutes());*/
     if(hour<dat.getMinutes()) {
-        hour += 24;
+        hour.value += 24;
     }
     var points = ((hour.value-dat.getHours())*12 + (minute.value-dat.getMinutes()) / 5);
     console.log(points);
