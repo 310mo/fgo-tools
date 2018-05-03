@@ -64,18 +64,51 @@ form {
 }
 
 @media screen and (max-width: 600px) {
+
     .anc {
         position: relative;
-        top: -330px;
-        left: 370px;
+        top: -430px;
+        left: 200px;
         font-size: 15px;
+    }
+
+    .saber {
+        position: relative;
+        top: 0px;
+        left: 50px;
+        width: 300px;
+        height: auto;
+    }
+    
+    .hukidashi {
+        position: relative;
+        top: 0px;
+        left: 130px;
+        width: 300px;
+        height: auto;
     }
 
     .anc2 {
         position: relative;
-        top: -320px;
-        left: 370px;
+        top: -430px;
+        left: 200px;
         font-size: 15px;
+    }
+
+    .saber2 {
+        position: relative;
+        top: 0px;
+        left: 50px;
+        width: 300px;
+        height: auto;
+    }
+    
+    .hukidashi2 {
+        position: relative;
+        top: 0px;
+        left: 130px;
+        width: 300px;
+        height: auto;
     }
 }
 
