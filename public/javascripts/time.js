@@ -33,7 +33,7 @@ function viewing(dat) {
         console.log(dat.getMonth(), dat.getDate(), dat.getHours(), dat.getMinutes());
     }
 
-    var anchor = document.createElement('h2');
+    var anchor = document.createElement('b');
     var br1 = document.createElement('br');
     var br2 = document.createElement('br');
     var br3 = document.createElement('br');

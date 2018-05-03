@@ -17,8 +17,8 @@ form {
 }
 
 .anc {
-    position: relative;
-    top: -330px;
+    position: absolute;
+    top: 370px;
     left: 700px;
     font-size: 20px;
 }
@@ -41,8 +41,8 @@ form {
 
 
 .anc2 {
-    position: relative;
-    top: -320px;
+    position: absolute;
+    top: 350px;
     left: 700px;
     font-size: 20px;
 }
@@ -66,46 +66,46 @@ form {
 @media screen and (max-width: 600px) {
     .anc {
         position: relative;
-        top: -300px;
-        left: 180px;
-        font-size: 15px;
+        top: -210px;
+        left: 250px;
+        font-size: 12px;
     }
 
     .saber {
         position: relative;
         top: 0px;
-        left: 50px;
+        left: -130px;
         width: 200px;
         height: auto;
     }
     
     .hukidashi {
         position: relative;
-        top: 0px;
-        left: 130px;
+        top: -120px;
+        left: 200px;
         width: 200px;
         height: auto;
     }
 
     .anc2 {
         position: relative;
-        top: -300px;
-        left: 180px;
+        top: -200px;
+        left: 230px;
         font-size: 15px;
     }
 
     .saber2 {
         position: relative;
         top: 0px;
-        left: 50px;
+        left: -130px;
         width: 200px;
         height: auto;
     }
     
     .hukidashi2 {
         position: relative;
-        top: 0px;
-        left: 130px;
+        top: -120px;
+        left: 200px;
         width: 200px;
         height: auto;
     }

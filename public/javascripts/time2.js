@@ -40,7 +40,7 @@ function viewing(dat) {
     var re_points = toap.value - points;
     console.log(re_points);
 
-    var anchor = document.createElement('h2');
+    var anchor = document.createElement('b');
     var br1 = document.createElement('br');
     var img = document.createElement('img');
     var img2 = document.createElement('img');
