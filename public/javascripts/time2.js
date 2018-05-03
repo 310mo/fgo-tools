@@ -64,6 +64,12 @@ function viewing(dat) {
         anchor.appendChild(text2);
     }
     var result = document.getElementById('result');
+    console.log(result.firstChild);
+    if(result.firstChild!=null){
+        while(result.firstChild!=null) {
+            result.removeChild(result.firstChild);
+        }
+    }
     result.appendChild(img2);
     result.appendChild(img);
     result.appendChild(anchor);

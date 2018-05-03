@@ -17,46 +17,47 @@ form {
 }
 
 .anc {
-    position: absolute;
-    top: 450px;
-    left: 720px;
+    position: relative;
+    top: -330px;
+    left: 700px;
     font-size: 20px;
 }
 
 .saber {
-    position: absolute;
-    top: 450px;
-    left: 450px;
+    position: relative;
+    top: 0px;
+    left: 150px;
     width: 300px;
     height: auto;
 }
 
 .hukidashi {
-    position: absolute;
-    top: 450px;
-    left: 650px;
+    position: relative;
+    top: -200px;
+    left: 630px;
     width: 300px;
     height: auto;
 }
 
+
 .anc2 {
-    position: absolute;
-    top: 400px;
+    position: relative;
+    top: -320px;
     left: 700px;
     font-size: 20px;
 }
 
 .saber2 {
-    position: absolute;
-    top: 400px;
-    left: 450px;
+    position: relative;
+    top: 0px;
+    left: 150px;
     width: 300px;
     height: auto;
 }
 
 .hukidashi2 {
-    position: absolute;
-    top: 390px;
+    position: relative;
+    top: -200px;
     left: 630px;
     width: 300px;
     height: auto;
