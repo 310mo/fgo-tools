@@ -27,10 +27,15 @@ function viewing(dat) {
 
     /*dat.setMinutes(dat.getMinutes()+5*(toap.value-fromap.value));
     console.log(dat.getMonth(), dat.getDate(), dat.getHours(), dat.getMinutes());*/
-    if(hour<dat.getMinutes()) {
-        hour.value += 24;
+    if(hour.value<dat.getHours()) {
+        var hv = Number(hour.value) + 24;
     }
-    var points = ((hour.value-dat.getHours())*12 + (minute.value-dat.getMinutes()) / 5);
+    else {
+        var hv = Number(hour.value);
+    }
+    console.log(hour.value);
+    console.log(minute.value);
+    var points = ((hv-dat.getHours())*12 + (minute.value-dat.getMinutes()) / 5);
     console.log(points);
     var re_points = toap.value - points;
     console.log(re_points);
@@ -44,11 +49,20 @@ function viewing(dat) {
     img.src = '/images/saber.PNG';
     img2.src = '/images/hukidashi.png';
     anchor.className = 'anc2';
-    text = document.createTextNode('現時点でAPを'+parseInt(String(re_points)));
-    text2 = document.createTextNode('にしておきましょう');
-    anchor.appendChild(text);
-    anchor.appendChild(br1);
-    anchor.appendChild(text2);
+    if(re_points>0) {   
+        text = document.createTextNode('現時点でAPを'+parseInt(String(re_points)));
+        text2 = document.createTextNode('にしておきましょう');
+        anchor.appendChild(text);
+        anchor.appendChild(br1);
+        anchor.appendChild(text2);
+    }
+    else {
+        text = document.createTextNode('使い切ってしまって');
+        text2 = document.createTextNode('問題ないです！');
+        anchor.appendChild(text);
+        anchor.appendChild(br1);
+        anchor.appendChild(text2);
+    }
     var result = document.getElementById('result');
     result.appendChild(img2);
     result.appendChild(img);
