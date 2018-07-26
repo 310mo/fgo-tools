@@ -33,17 +33,17 @@ function viewing(dat) {
         console.log(dat.getMonth(), dat.getDate(), dat.getHours(), dat.getMinutes());
     }
 
-    var anchor = document.createElement('b');
+    var anchor = document.createElement('h1');
     var br1 = document.createElement('br');
     var br2 = document.createElement('br');
     var br3 = document.createElement('br');
-    var img = document.createElement('img');
-    var img2 = document.createElement('img');
+    //var img = document.createElement('img');
+    //var img2 = document.createElement('img');
     anchor.className = 'anc';
-    img.className = 'saber';
-    img2.className = 'hukidashi';
-    img.src = '/images/saber.PNG';
-    img2.src = '/images/hukidashi.png';
+    //img.className = 'saber';
+    //img2.className = 'hukidashi';
+    //img.src = '/images/saber.PNG';
+    //img2.src = '/images/hukidashi.png';
     if(flug==0){
         texta = document.createTextNode('予定時刻は');
         text = document.createTextNode(dat.getMonth()+'月'+dat.getDate()+'日');
@@ -62,20 +62,20 @@ function viewing(dat) {
     anchor.appendChild(text3);
 
     var result = document.getElementById('result');
-    var result2 = document.getElementById('result2');
+    //var result2 = document.getElementById('result2');
     console.log(result.firstChild);
     if(result.firstChild!=null){
         while(result.firstChild!=null) {
             result.removeChild(result.firstChild);
         }
     }
-    if(result2.firstChild!=null){
+    /*if(result2.firstChild!=null){
         while(result2.firstChild!=null) {
             result2.removeChild(result2.firstChild);
         }
-    }
-    result2.appendChild(img2);
-    result2.appendChild(img);
+    }*/
+    //result2.appendChild(img2);
+    //result2.appendChild(img);
     result.appendChild(anchor);
     
 }

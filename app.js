@@ -13,6 +13,7 @@ var command = require('./routes/command');
 var time = require('./routes/time');
 var time2 = require('./routes/time2');
 var item = require('./routes/item');
+var gacha = require('./routes/gacha');
 
 var app = express();
 
@@ -43,6 +44,7 @@ app.use('/command', command);
 app.use('/time', time);
 app.use('/time2', time2);
 app.use('/item', item);
+app.use('/gacha', gacha);
 
 
 // catch 404 and forward to error handler

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Gacha</title>
+        <link rel='stylesheet' href='/stylesheets/style_time.css' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+
+    <body>
+        <header>
+            <h1><%= title %></h1>
+        </header>
+        <div id="result2"></div>
+        <div id="result"></div>
+        <form class="gacha">
+            <label for="servant">引きたい鯖の排出率：</label>
+            <input id="servant" name="servant" type"number" style="width:30px;" />%<br>
+            <label for="time">何連？：</label>
+            <input id="time" name="time" type"number" style="width:30px;" />連
+            <br>
+            <input id="btn" type="button" value="チェック">
+            <input id="btn2" type="button" value="リセット">
+        </form>
+        <p class="menu">説明</p>
+        <ul>
+            <li class="menuli">自分が引こうと思っている鯖の排出率と何連するかを打ち込むと引ける確率が出ます。</li>
+            <li class="menuli">純粋な確率計算をしている雑魚プログラムなのでまあそんなもんかという指標にどうぞ。スマホだけ持っている状況でも0.993の100乗とか計算してくれて嬉しいな〜ぐらいの優しい気持ちで見守ってくれるとありがたいです。</li>
+        </ul>
+        <p class="menu"><a href="/" class="totop">トップに戻る</a></p>
+        
+        
+        <script type="text/javascript"  src="/javascripts/gacha.js"></script>
+    </body>
+</html>

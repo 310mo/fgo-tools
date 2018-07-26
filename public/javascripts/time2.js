@@ -40,15 +40,15 @@ function viewing(dat) {
     var re_points = toap.value - points;
     console.log(re_points);
 
-    var anchor = document.createElement('b');
+    var anchor = document.createElement('h1');
     var br1 = document.createElement('br');
-    var img = document.createElement('img');
-    var img2 = document.createElement('img');
-    img.className = 'saber2';
-    img2.className = 'hukidashi2';
-    img.src = '/images/saber.PNG';
-    img2.src = '/images/hukidashi.png';
-    anchor.className = 'anc2';
+    //var img = document.createElement('img');
+    //var img2 = document.createElement('img');
+    //img.className = 'saber2';
+    //img2.className = 'hukidashi2';
+    //img.src = '/images/saber.PNG';
+    //img2.src = '/images/hukidashi.png';
+    anchor.className = 'anc';
     if(re_points>0) {   
         text = document.createTextNode('現時点でAPを'+parseInt(String(re_points)));
         text2 = document.createTextNode('にしておきましょう');
@@ -64,20 +64,20 @@ function viewing(dat) {
         anchor.appendChild(text2);
     }
     var result = document.getElementById('result');
-    var result2 = document.getElementById('result2');
-    console.log(result.firstChild);
+    //var result2 = document.getElementById('result2');
+    //console.log(result.firstChild);
     if(result.firstChild!=null){
         while(result.firstChild!=null) {
             result.removeChild(result.firstChild);
         }
     }
-    if(result2.firstChild!=null){
+    /*if(result2.firstChild!=null){
         while(result2.firstChild!=null) {
             result2.removeChild(result2.firstChild);
         }
     }
     result2.appendChild(img2);
-    result2.appendChild(img);
+    result2.appendChild(img);*/
     result.appendChild(anchor);
 }
 
