@@ -16,6 +16,16 @@ body {
   margin-left: 20px;
 }
 
+.btoa {
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.sdata {
+  border: solid;
+  width: 250px;
+}
+
 .menutop2 {
   font-size: 24px;
   margin-left: 20px;

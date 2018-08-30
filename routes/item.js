@@ -69,6 +69,14 @@ router.get('/', (req, res, next) => {
                                                     db.all(q_s3, (err, rows_s3) => {
                                                         var data = {
                                                             title: row_title.name,
+                                                            sbefore: req.session.sairinbefore,
+                                                            safter: req.session.sairinafter,
+                                                            sk1before: req.session.skill1before,
+                                                            sk1after: req.session.skill1after,
+                                                            sk2before: req.session.skill2before,
+                                                            sk2after: req.session.skill2after,
+                                                            sk3before: req.session.skill3before,
+                                                            sk3after: req.session.skill3after,
                                                             content: rows,
                                                             content_s1: rows_s1,
                                                             content_s2: rows_s2,
