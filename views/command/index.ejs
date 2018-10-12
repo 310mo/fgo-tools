@@ -9,11 +9,11 @@
             crossorigin="anonymous"></script>
 
         <script>
-            $(function(){
+            /*$(function(){
                 $('.button').on('click', function(){
                     $(this).toggleClass('active');
                 });
-            });
+            });*/
         </script>
         <script>
             $(function() {
@@ -46,21 +46,68 @@
         </head>
         <div role="main" class="menuservant">
             <table class="servants">
-                <% for (var j=0; j<3; j++) { %> 
+
                     <% for (var i in content) { %> 
-                    <% if (number[j]==content[i].id) { %>
+                    <% if (number[0]==content[i].id) { %>
                     <tr>
                         <% var obj = content[i]; %>
+
+                        <% var style1 = "background-color:" + color1 %>
+                        <% var style2 = "background-color:" + color2 %>
+                        <% var style3 = "background-color:" + color3 %>
+                        <% var style4 = "background-color:" + color4 %>
+                        <% var style5 = "background-color:" + color5 %>
+                        
                         <th class="name"><%= obj.name %></th>
-                        <td><button class="button"><font color=<%=obj.color1 %>><%= obj.c_cards[0] %></font></button></td>
-                        <td><button class="button"><font color=<%=obj.color2 %>><%= obj.c_cards[1] %></font></button></td>
-                        <td><button class="button"><font color=<%=obj.color3 %>><%= obj.c_cards[2] %></font></button></td>
-                        <td><button class="button"><font color=<%=obj.color4 %>><%= obj.c_cards[3] %></font></button></td>
-                        <td><button class="button"><font color=<%=obj.color5 %>><%= obj.c_cards[4] %></font></button></td>
+                        <td><button id="btn1" class="button" style=<%= style1 %>><font color=<%=obj.color1 %>><%= obj.c_cards[0] %></font></button></td>
+                        <td><button id="btn2" class="button" style=<%= style2 %>><font color=<%=obj.color2 %>><%= obj.c_cards[1] %></font></button></td>
+                        <td><button id="btn3" class="button" style=<%= style3 %>><font color=<%=obj.color3 %>><%= obj.c_cards[2] %></font></button></td>
+                        <td><button id="btn4" class="button" style=<%= style4 %>><font color=<%=obj.color4 %>><%= obj.c_cards[3] %></font></button></td>
+                        <td><button id="btn5" class="button" style=<%= style5 %>><font color=<%=obj.color5 %>><%= obj.c_cards[4] %></font></button></td>
                     </tr>
                     <% } %>
                     <% } %>
-                <% } %>
+                    <% for (var i in content) { %> 
+                    <% if (number[1]==content[i].id) { %>
+                    <tr>
+                        <% var obj = content[i]; %>
+
+                        <% var style6 = "background-color:" + color6 %>
+                        <% var style7 = "background-color:" + color7 %>
+                        <% var style8 = "background-color:" + color8 %>
+                        <% var style9 = "background-color:" + color9 %>
+                        <% var style10 = "background-color:" + color10 %>
+
+                        <th class="name"><%= obj.name %></th>
+                        <td><button id="btn6" class="button" style=<%= style6 %>><font color=<%=obj.color1 %>><%= obj.c_cards[0] %></font></button></td>
+                        <td><button id="btn7" class="button" style=<%= style7 %>><font color=<%=obj.color2 %>><%= obj.c_cards[1] %></font></button></td>
+                        <td><button id="btn8" class="button" style=<%= style8 %>><font color=<%=obj.color3 %>><%= obj.c_cards[2] %></font></button></td>
+                        <td><button id="btn9" class="button" style=<%= style9 %>><font color=<%=obj.color4 %>><%= obj.c_cards[3] %></font></button></td>
+                        <td><button id="btn10" class="button" style=<%= style10 %>><font color=<%=obj.color5 %>><%= obj.c_cards[4] %></font></button></td>
+                    </tr>
+                    <% } %>
+                    <% } %>
+                    <% for (var i in content) { %> 
+                    <% if (number[2]==content[i].id) { %>
+                    <tr>
+                        <% var obj = content[i]; %>
+
+                        <% var style11 = "background-color:" + color11 %>
+                        <% var style12 = "background-color:" + color12 %>
+                        <% var style13 = "background-color:" + color13 %>
+                        <% var style14 = "background-color:" + color14 %>
+                        <% var style15 = "background-color:" + color15 %>
+
+                        <th class="name"><%= obj.name %></th>
+                        <td><button id="btn11" class="button" style=<%= style11 %>><font color=<%=obj.color1 %>><%= obj.c_cards[0] %></font></button></td>
+                        <td><button id="btn12" class="button" style=<%= style12 %>><font color=<%=obj.color2 %>><%= obj.c_cards[1] %></font></button></td>
+                        <td><button id="btn13" class="button" style=<%= style13 %>><font color=<%=obj.color3 %>><%= obj.c_cards[2] %></font></button></td>
+                        <td><button id="btn14" class="button" style=<%= style14 %>><font color=<%=obj.color4 %>><%= obj.c_cards[3] %></font></button></td>
+                        <td><button id="btn15" class="button" style=<%= style15 %>><font color=<%=obj.color5 %>><%= obj.c_cards[4] %></font></button></td>
+                    </tr>
+                    <% } %>
+                    <% } %>
+
             </table>
             <form method="post" action="/command">
             <table>
@@ -124,7 +171,23 @@
                     </td>
                 </tr>
             </table>
-            <input type="submit" class="buttons" value="変更">
+            <input type="hidden" id = "toc1" name = "toc1" value = <%= color1 %>>
+            <input type="hidden" id = "toc2" name = "toc2" value = <%= color2 %>>
+            <input type="hidden" id = "toc3" name = "toc3" value = <%= color3 %>>
+            <input type="hidden" id = "toc4" name = "toc4" value = <%= color4 %>>
+            <input type="hidden" id = "toc5" name = "toc5" value = <%= color5 %>>
+            <input type="hidden" id = "toc6" name = "toc6" value = <%= color6 %>>
+            <input type="hidden" id = "toc7" name = "toc7" value = <%= color7 %>>
+            <input type="hidden" id = "toc8" name = "toc8" value = <%= color8 %>>
+            <input type="hidden" id = "toc9" name = "toc9" value = <%= color9 %>>
+            <input type="hidden" id = "toc10" name = "toc10" value = <%= color10 %>>
+            <input type="hidden" id = "toc11" name = "toc11" value = <%= color11 %>>
+            <input type="hidden" id = "toc12" name = "toc12" value = <%= color12 %>>
+            <input type="hidden" id = "toc13" name = "toc13" value = <%= color13 %>>
+            <input type="hidden" id = "toc14" name = "toc14" value = <%= color14 %>>
+            <input type="hidden" id = "toc15" name = "toc15" value = <%= color15 %>>
+
+            <input type="submit" class="buttons" value="オーダーチェンジ">
             </form>
             <input type="button" class="buttons" value="コマンドカードを初期状態に戻す" onclick="window.location.reload();" />
         </div>
@@ -132,9 +195,11 @@
         <ul>
             <li class="menuli">使用されたコマンドカードをクリックしてください。クリックされたカードは紫色に変化します。</li>
             <li class="menuli">コマンドカードが埋まったら「コマンドカードを初期状態に戻す」ボタンを押せばリセットされます。（このボタンはただのリロードボタンなので15個全部押し直しても問題ないです）</li>
-            <li class="menuli">仕様上、カルデア戦闘服のオーダーチェンジによるメンバー変更には対応していません。ごめんなさい。カルデア戦闘服を使用しないか（横暴）、オダチェン前の使用カードを覚えておくようにお願いします。（なんにせよ横暴）</li>
-            <li class="menuli">手元で調べた感じだと、オダチェンしたら、残った2人のカードを使い切ったタイミングでコマンドカードのリセットが起こるみたいなので参考までに。</li>
+            <li class="menuli">オーダーチェンジボタンは使用されたカードの情報を保存する動作になっていますが、オーダーチェンジの仕様上、コマンドカードの構成が異なるサーヴァントを入れ替えたときの挙動を完全に追い切るのは難しいと思われます。そこについての誤差はご了承ください。<a href="https://fate-go.boom-app.wiki/entry/1071">参考にしたページ</a></a></li>
+            <li class="menuli">サーヴァントが退場した場合は「コマンドカードを初期状態に戻す」ボタンをクリックしてから「オーダーチェンジ」を行なってください。</li>
         </ul>
         <p class="menu"><a href="/">トップに戻る</a></p>
+
+        <script type="text/javascript"  src="/javascripts/command.js"></script>
     </body>
 </html>

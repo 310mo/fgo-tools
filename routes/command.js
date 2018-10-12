@@ -29,7 +29,22 @@ router.get('/', (req, res, next) => {
                             title: '戦闘中のサーヴァント',
                             content: rows,
                             content2: rows2,
-                            number: nums
+                            number: nums,
+                            color1 : "white",
+                            color2 : "white",
+                            color3 : "white",
+                            color4 : "white",
+                            color5 : "white",
+                            color6 : "white",
+                            color7 : "white",
+                            color8 : "white",
+                            color9 : "white",
+                            color10 : "white",
+                            color11 : "white",
+                            color12 : "white",
+                            color13 : "white",
+                            color14 : "white",
+                            color15 : "white"
                         }
                         console.log('id is '+rows['id']);
                         console.log('nums = '+nums[0]+', '+nums[1]+', '+nums[2]);
@@ -73,7 +88,22 @@ router.post('/', (req, res, next) => {
                             title: '戦闘中のサーヴァント',
                             content: rows,
                             content2: rows2,
-                            number: [id1, id2, id3]
+                            number: [id1, id2, id3],
+                            color1: req.body.toc1,
+                            color2: req.body.toc2,
+                            color3: req.body.toc3,
+                            color4: req.body.toc4,
+                            color5: req.body.toc5,
+                            color6: req.body.toc6,
+                            color7: req.body.toc7,
+                            color8: req.body.toc8,
+                            color9: req.body.toc9,
+                            color10: req.body.toc10,
+                            color11: req.body.toc11,
+                            color12: req.body.toc12,
+                            color13: req.body.toc13,
+                            color14: req.body.toc14,
+                            color15: req.body.toc15,
                         }
                         console.log(rows);
                         res.render('command/index', data);
