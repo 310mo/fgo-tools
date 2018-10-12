@@ -50,7 +50,7 @@
                     <% for (var i in content) { %> 
                     <% if (number[0]==content[i].id) { %>
                     <tr>
-                        <% var obj = content[i]; %>
+                        <% var obj1 = content[i]; %>
 
                         <% var style1 = "background-color:" + color1 %>
                         <% var style2 = "background-color:" + color2 %>
@@ -58,19 +58,19 @@
                         <% var style4 = "background-color:" + color4 %>
                         <% var style5 = "background-color:" + color5 %>
                         
-                        <th class="name"><%= obj.name %></th>
-                        <td><button id="btn1" class="button" style=<%= style1 %>><font color=<%=obj.color1 %>><%= obj.c_cards[0] %></font></button></td>
-                        <td><button id="btn2" class="button" style=<%= style2 %>><font color=<%=obj.color2 %>><%= obj.c_cards[1] %></font></button></td>
-                        <td><button id="btn3" class="button" style=<%= style3 %>><font color=<%=obj.color3 %>><%= obj.c_cards[2] %></font></button></td>
-                        <td><button id="btn4" class="button" style=<%= style4 %>><font color=<%=obj.color4 %>><%= obj.c_cards[3] %></font></button></td>
-                        <td><button id="btn5" class="button" style=<%= style5 %>><font color=<%=obj.color5 %>><%= obj.c_cards[4] %></font></button></td>
+                        <th class="name"><%= obj1.name %></th>
+                        <td><button id="btn1" class="button" style=<%= style1 %>><font color=<%=obj1.color1 %>><%= obj1.c_cards[0] %></font></button></td>
+                        <td><button id="btn2" class="button" style=<%= style2 %>><font color=<%=obj1.color2 %>><%= obj1.c_cards[1] %></font></button></td>
+                        <td><button id="btn3" class="button" style=<%= style3 %>><font color=<%=obj1.color3 %>><%= obj1.c_cards[2] %></font></button></td>
+                        <td><button id="btn4" class="button" style=<%= style4 %>><font color=<%=obj1.color4 %>><%= obj1.c_cards[3] %></font></button></td>
+                        <td><button id="btn5" class="button" style=<%= style5 %>><font color=<%=obj1.color5 %>><%= obj1.c_cards[4] %></font></button></td>
                     </tr>
                     <% } %>
                     <% } %>
                     <% for (var i in content) { %> 
                     <% if (number[1]==content[i].id) { %>
                     <tr>
-                        <% var obj = content[i]; %>
+                        <% var obj2 = content[i]; %>
 
                         <% var style6 = "background-color:" + color6 %>
                         <% var style7 = "background-color:" + color7 %>
@@ -78,19 +78,19 @@
                         <% var style9 = "background-color:" + color9 %>
                         <% var style10 = "background-color:" + color10 %>
 
-                        <th class="name"><%= obj.name %></th>
-                        <td><button id="btn6" class="button" style=<%= style6 %>><font color=<%=obj.color1 %>><%= obj.c_cards[0] %></font></button></td>
-                        <td><button id="btn7" class="button" style=<%= style7 %>><font color=<%=obj.color2 %>><%= obj.c_cards[1] %></font></button></td>
-                        <td><button id="btn8" class="button" style=<%= style8 %>><font color=<%=obj.color3 %>><%= obj.c_cards[2] %></font></button></td>
-                        <td><button id="btn9" class="button" style=<%= style9 %>><font color=<%=obj.color4 %>><%= obj.c_cards[3] %></font></button></td>
-                        <td><button id="btn10" class="button" style=<%= style10 %>><font color=<%=obj.color5 %>><%= obj.c_cards[4] %></font></button></td>
+                        <th class="name"><%= obj2.name %></th>
+                        <td><button id="btn6" class="button" style=<%= style6 %>><font color=<%=obj2.color1 %>><%= obj2.c_cards[0] %></font></button></td>
+                        <td><button id="btn7" class="button" style=<%= style7 %>><font color=<%=obj2.color2 %>><%= obj2.c_cards[1] %></font></button></td>
+                        <td><button id="btn8" class="button" style=<%= style8 %>><font color=<%=obj2.color3 %>><%= obj2.c_cards[2] %></font></button></td>
+                        <td><button id="btn9" class="button" style=<%= style9 %>><font color=<%=obj2.color4 %>><%= obj2.c_cards[3] %></font></button></td>
+                        <td><button id="btn10" class="button" style=<%= style10 %>><font color=<%=obj2.color5 %>><%= obj2.c_cards[4] %></font></button></td>
                     </tr>
                     <% } %>
                     <% } %>
                     <% for (var i in content) { %> 
                     <% if (number[2]==content[i].id) { %>
                     <tr>
-                        <% var obj = content[i]; %>
+                        <% var obj3 = content[i]; %>
 
                         <% var style11 = "background-color:" + color11 %>
                         <% var style12 = "background-color:" + color12 %>
@@ -98,12 +98,12 @@
                         <% var style14 = "background-color:" + color14 %>
                         <% var style15 = "background-color:" + color15 %>
 
-                        <th class="name"><%= obj.name %></th>
-                        <td><button id="btn11" class="button" style=<%= style11 %>><font color=<%=obj.color1 %>><%= obj.c_cards[0] %></font></button></td>
-                        <td><button id="btn12" class="button" style=<%= style12 %>><font color=<%=obj.color2 %>><%= obj.c_cards[1] %></font></button></td>
-                        <td><button id="btn13" class="button" style=<%= style13 %>><font color=<%=obj.color3 %>><%= obj.c_cards[2] %></font></button></td>
-                        <td><button id="btn14" class="button" style=<%= style14 %>><font color=<%=obj.color4 %>><%= obj.c_cards[3] %></font></button></td>
-                        <td><button id="btn15" class="button" style=<%= style15 %>><font color=<%=obj.color5 %>><%= obj.c_cards[4] %></font></button></td>
+                        <th class="name"><%= obj3.name %></th>
+                        <td><button id="btn11" class="button" style=<%= style11 %>><font color=<%=obj3.color1 %>><%= obj3.c_cards[0] %></font></button></td>
+                        <td><button id="btn12" class="button" style=<%= style12 %>><font color=<%=obj3.color2 %>><%= obj3.c_cards[1] %></font></button></td>
+                        <td><button id="btn13" class="button" style=<%= style13 %>><font color=<%=obj3.color3 %>><%= obj3.c_cards[2] %></font></button></td>
+                        <td><button id="btn14" class="button" style=<%= style14 %>><font color=<%=obj3.color4 %>><%= obj3.c_cards[3] %></font></button></td>
+                        <td><button id="btn15" class="button" style=<%= style15 %>><font color=<%=obj3.color5 %>><%= obj3.c_cards[4] %></font></button></td>
                     </tr>
                     <% } %>
                     <% } %>
@@ -114,9 +114,9 @@
                 <tr>
                     <th>退場メンバー</th>
                     <td>
-                        <input type="checkbox" name="before" value=1>前衛<br>
-                        <input type="checkbox" name="before" value=2>中衛<br>
-                        <input type="checkbox" name="before" value=3>後衛<br>
+                        <input type="checkbox" name="before" value=1><%= obj1.name %><br>
+                        <input type="checkbox" name="before" value=2><%= obj2.name %><br>
+                        <input type="checkbox" name="before" value=3><%= obj3.name %><br>
                     </td>
                 </tr>
                 <tr>
