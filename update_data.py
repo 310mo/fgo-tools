@@ -1,6 +1,6 @@
 #idを末尾に追加するコード
-f = open('fgo_text_new.txt', 'r')
-ff = open('fgo_text_new2.txt', 'w')
+f = open('fgo_text.txt', 'r')
+ff = open('fgo_text_2.txt', 'w')
 
 count = 0
 s_count = 1
